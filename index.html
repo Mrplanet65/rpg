@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Unterwelt — Crônicas de Mauern</title>
+<title>Unterwelt — A Lenda de Yunigard</title>
 <link href="https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@400;700&family=Cinzel:wght@400;600;700&family=Crimson+Text:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
 <style>
   :root {
@@ -364,15 +364,15 @@
   <div class="divider"></div>
 
   <div class="parchment-card">
-    <div class="card-heading">📜 Crônicas de Mauern</div>
+    <div class="card-heading">📜 A Lenda de Yunigard</div>
     <p>
-      Unterwelt é um mundo moldado por <strong>política, poder e segredos</strong>. Cinco reinos convivem numa paz frágil — cada um carregando suas ambições, feridas e mistérios. No coração de tudo está <strong>Mondriau</strong>, e no coração de Mondriau pulsa a capital <strong>Mauern</strong>: uma cidade de mercados movimentados, nobres ambiciosos e sombras que escondem mais do que os olhos podem ver.
+      Em Unterwelt, cinco reinos dividem um continente marcado por política, segredos e feridas antigas. Cada reino carrega sua própria história — e suas próprias ambições. No centro de tudo está <strong>Mondriau</strong>, o coração comercial do continente. Um reino sem rei, governado por cinco casas nobres que disputam poder nas sombras enquanto sorriem uns para os outros à luz do dia.
     </p>
     <p>
-      Aqui não existe um rei. O poder pertence a um <strong>conselho de cinco casas nobres</strong>, cada uma dominando uma esfera do reino. Entre aliados e traidores, a linha é tênue — e o preço da confiança, alto.
+      É na capital de Mondriau, <strong>Mauern</strong>, que tudo começa. Uma cidade de muralhas altas, mercados barulhentos e becos silenciosos. Aqui vivem nobres e mendigos, guardas honestos e corruptos, comerciantes e criminosos — todos sob o mesmo céu, todos com seus segredos.
     </p>
     <p>
-      Vocês chegam a Mauern por caminhos diferentes. Mas o destino — e talvez algo maior — os conduzirá ao mesmo ponto. O que fazem a partir daí é escolha de vocês.
+      É aqui que a sua história começa.
     </p>
   </div>
 
@@ -479,400 +479,411 @@
 
 <!-- LOJA -->
 <section class="section-ph" id="loja" style="min-height:auto; padding:4rem 2rem;">
-
-  <!-- TELA DE ENTRADA -->
-  <div id="loja-entrada">
-    <div class="badge badge-soon" style="margin-bottom:1rem;">Comércio</div>
-    <h2 style="opacity:1; margin-bottom:0.5rem;">Loja</h2>
-    <p style="opacity:0.7; margin-bottom:2rem; max-width:460px;">O coração comercial de Unterwelt. Armas, armaduras e equipamentos para cada aventureiro.</p>
-    <button onclick="abrirLoja()" onmouseover="this.style.background='rgba(201,162,39,0.22)'" onmouseout="this.style.background='rgba(201,162,39,0.12)'" style="background:rgba(201,162,39,0.12);border:1px solid rgba(201,162,39,0.4);border-radius:2px;color:var(--gold);font-family:'Cinzel',serif;font-size:0.82rem;letter-spacing:0.25em;text-transform:uppercase;padding:0.7rem 2rem;cursor:pointer;transition:background 0.3s;">
-      ⚔ Entrar na Loja
-    </button>
-  </div>
-
-  <!-- MENU DA LOJA (oculto inicialmente) -->
-  <div id="loja-conteudo" style="display:none; width:100%;">
-  <p style="opacity:0.7; margin-bottom:2rem; max-width:520px; text-align:center; font-style:italic;">Navegue pelas páginas do catálogo e encontre o que precisa para sua jornada.</p>
-
-  <!-- CAPA DO MENU -->
-  <div class="menu-livro">
-
-    <!-- ABAS DE PÁGINAS -->
-    <div class="menu-tabs">
-      <button class="menu-tab active" onclick="abrirPagina('armas', this)">⚔ Armas</button>
-      <button class="menu-tab" onclick="abrirPagina('armaduras', this)">🛡 Armaduras</button>
-      <button class="menu-tab" onclick="abrirPagina('equipamentos', this)">🎒 Equipamentos</button>
-      <button class="menu-tab" onclick="abrirPagina('bar', this)">🍺 Bar</button>
-      <button class="menu-tab" onclick="abrirPagina('mauern', this)">🏙 Mauern</button>
-    </div>
-
-    <!-- PÁGINA: ARMAS -->
-    <div id="pagina-armas" class="menu-pagina">
-      <div class="menu-pagina-titulo">⚔ Armaria</div>
-      <p class="menu-pagina-sub">Lâminas, cetros e armas de combate — para cada estilo de aventureiro.</p>
-
-      <div class="menu-categoria-titulo">— Armas Simples Corpo a Corpo —</div>
-      <div class="menu-grid">
-        <div class="menu-item"><div class="menu-item-nome">Clava</div><div class="menu-item-desc">1d4 contundente • Leve</div><div class="menu-item-preco">1 PP</div></div>
-        <div class="menu-item"><div class="menu-item-nome">Adaga</div><div class="menu-item-desc">1d4 perfurante • Leve, arremesso, finura</div><div class="menu-item-preco">2 PO</div></div>
-        <div class="menu-item"><div class="menu-item-nome">Foice</div><div class="menu-item-desc">1d4 cortante • Leve</div><div class="menu-item-preco">1 PP</div></div>
-        <div class="menu-item"><div class="menu-item-nome">Lança</div><div class="menu-item-desc">1d6 perfurante • Arremesso, versátil (1d8)</div><div class="menu-item-preco">1 PP</div></div>
-        <div class="menu-item"><div class="menu-item-nome">Machado de Mão</div><div class="menu-item-desc">1d6 cortante • Leve, arremesso</div><div class="menu-item-preco">5 PO</div></div>
-        <div class="menu-item"><div class="menu-item-nome">Porrete</div><div class="menu-item-desc">1d6 contundente • Versátil (1d8)</div><div class="menu-item-preco">2 PP</div></div>
-      </div>
-
-      <div class="menu-categoria-titulo">— Armas Simples à Distância —</div>
-      <div class="menu-grid">
-        <div class="menu-item"><div class="menu-item-nome">Arco Curto</div><div class="menu-item-desc">1d6 perfurante • Alcance 24/96m • 2 mãos</div><div class="menu-item-preco">25 PO</div></div>
-        <div class="menu-item"><div class="menu-item-nome">Besta Leve</div><div class="menu-item-desc">1d8 perfurante • Alcance 24/96m • Recarga</div><div class="menu-item-preco">25 PO</div></div>
-        <div class="menu-item"><div class="menu-item-nome">Dardo</div><div class="menu-item-desc">1d4 perfurante • Leve, finura, arremesso</div><div class="menu-item-preco">5 PC (unid.)</div></div>
-        <div class="menu-item"><div class="menu-item-nome">Funda</div><div class="menu-item-desc">1d4 contundente • Alcance 9/36m</div><div class="menu-item-preco">1 PP</div></div>
-      </div>
-
-      <div class="menu-categoria-titulo">— Armas Marciais Corpo a Corpo —</div>
-      <div class="menu-grid">
-        <div class="menu-item"><div class="menu-item-nome">Espada Longa</div><div class="menu-item-desc">1d8 cortante • Versátil (1d10)</div><div class="menu-item-preco">15 PO</div></div>
-        <div class="menu-item"><div class="menu-item-nome">Espada Curta</div><div class="menu-item-desc">1d6 perfurante • Leve, finura</div><div class="menu-item-preco">10 PO</div></div>
-        <div class="menu-item"><div class="menu-item-nome">Machado de Guerra</div><div class="menu-item-desc">1d8 cortante • Versátil (1d10)</div><div class="menu-item-preco">10 PO</div></div>
-        <div class="menu-item"><div class="menu-item-nome">Martelo de Guerra</div><div class="menu-item-desc">1d8 contundente • Versátil (1d10)</div><div class="menu-item-preco">15 PO</div></div>
-        <div class="menu-item"><div class="menu-item-nome">Rapieira</div><div class="menu-item-desc">1d8 perfurante • Finura</div><div class="menu-item-preco">25 PO</div></div>
-        <div class="menu-item"><div class="menu-item-nome">Glaive</div><div class="menu-item-desc">1d10 cortante • Pesada, alcance, 2 mãos</div><div class="menu-item-preco">20 PO</div></div>
-        <div class="menu-item"><div class="menu-item-nome">Alabarda</div><div class="menu-item-desc">1d10 cortante • Pesada, alcance, 2 mãos</div><div class="menu-item-preco">20 PO</div></div>
-        <div class="menu-item"><div class="menu-item-nome">Espada Grande</div><div class="menu-item-desc">2d6 cortante • Pesada, 2 mãos</div><div class="menu-item-preco">50 PO</div></div>
-        <div class="menu-item"><div class="menu-item-nome">Lança de Guerra</div><div class="menu-item-desc">1d12 perfurante • Pesada, alcance, 2 mãos</div><div class="menu-item-preco">10 PO</div></div>
-        <div class="menu-item"><div class="menu-item-nome">Maça Estrela</div><div class="menu-item-desc">1d8 perfurante</div><div class="menu-item-preco">15 PO</div></div>
-      </div>
-
-      <div class="menu-categoria-titulo">— Armas Marciais à Distância —</div>
-      <div class="menu-grid">
-        <div class="menu-item"><div class="menu-item-nome">Arco Longo</div><div class="menu-item-desc">1d8 perfurante • Alcance 45/180m • Pesada</div><div class="menu-item-preco">50 PO</div></div>
-        <div class="menu-item"><div class="menu-item-nome">Besta Pesada</div><div class="menu-item-desc">1d10 perfurante • Alcance 30/120m • Recarga</div><div class="menu-item-preco">50 PO</div></div>
-        <div class="menu-item"><div class="menu-item-nome">Besta de Mão</div><div class="menu-item-desc">1d6 perfurante • Leve, recarga</div><div class="menu-item-preco">75 PO</div></div>
-      </div>
-
-      <div class="menu-nota">* Flechas (20 unid.): 1 PO &nbsp;|&nbsp; Virotes de besta (20 unid.): 1 PO &nbsp;|&nbsp; Pedras de funda (20 unid.): 4 PC</div>
-    </div>
-
-    <!-- PÁGINA: ARMADURAS -->
-    <div id="pagina-armaduras" class="menu-pagina" style="display:none;">
-      <div class="menu-pagina-titulo">🛡 Armaria de Defesa</div>
-      <p class="menu-pagina-sub">Proteções para cada tipo de combatente — do ladino ao paladino.</p>
-
-      <div class="menu-categoria-titulo">— Armaduras Leves —</div>
-      <div class="menu-grid">
-        <div class="menu-item"><div class="menu-item-nome">Armadura de Couro</div><div class="menu-item-desc">CA 11 + Des • Sem penalidade de furtividade</div><div class="menu-item-preco">10 PO</div></div>
-        <div class="menu-item"><div class="menu-item-nome">Couro Batido</div><div class="menu-item-desc">CA 12 + Des • Confeccionado com couro reforçado</div><div class="menu-item-preco">45 PO</div></div>
-        <div class="menu-item"><div class="menu-item-nome">Camisão de Malha</div><div class="menu-item-desc">CA 13 + Des • Leve e flexível</div><div class="menu-item-preco">50 PO</div></div>
-      </div>
-
-      <div class="menu-categoria-titulo">— Armaduras Médias —</div>
-      <div class="menu-grid">
-        <div class="menu-item"><div class="menu-item-nome">Cota de Malha</div><div class="menu-item-desc">CA 13 + Des (máx 2) • Penalidade furtividade</div><div class="menu-item-preco">50 PO</div></div>
-        <div class="menu-item"><div class="menu-item-nome">Armadura de Escamas</div><div class="menu-item-desc">CA 14 + Des (máx 2) • Penalidade furtividade</div><div class="menu-item-preco">50 PO</div></div>
-        <div class="menu-item"><div class="menu-item-nome">Couraça</div><div class="menu-item-desc">CA 14 + Des (máx 2) • Sem penalidade</div><div class="menu-item-preco">400 PO</div></div>
-        <div class="menu-item"><div class="menu-item-nome">Meia Armadura</div><div class="menu-item-desc">CA 15 + Des (máx 2) • Penalidade furtividade</div><div class="menu-item-preco">750 PO</div></div>
-      </div>
-
-      <div class="menu-categoria-titulo">— Armaduras Pesadas —</div>
-      <div class="menu-grid">
-        <div class="menu-item"><div class="menu-item-nome">Cota de Anéis</div><div class="menu-item-desc">CA 14 • Penalidade furtividade • For 13</div><div class="menu-item-preco">30 PO</div></div>
-        <div class="menu-item"><div class="menu-item-nome">Cota de Placas</div><div class="menu-item-desc">CA 15 • Penalidade furtividade • For 13</div><div class="menu-item-preco">75 PO</div></div>
-        <div class="menu-item"><div class="menu-item-nome">Meia Placa</div><div class="menu-item-desc">CA 16 • Penalidade furtividade • For 15</div><div class="menu-item-preco">750 PO</div></div>
-        <div class="menu-item destaque"><div class="menu-item-nome">Armadura de Placas</div><div class="menu-item-desc">CA 18 • Penalidade furtividade • For 15</div><div class="menu-item-preco">1.500 PO</div></div>
-      </div>
-
-      <div class="menu-categoria-titulo">— Escudos —</div>
-      <div class="menu-grid">
-        <div class="menu-item"><div class="menu-item-nome">Escudo</div><div class="menu-item-desc">+2 CA • Requer uma mão livre</div><div class="menu-item-preco">10 PO</div></div>
-      </div>
-
-      <div class="menu-nota">* CA = Classe de Armadura &nbsp;|&nbsp; Des = Modificador de Destreza &nbsp;|&nbsp; For = Força mínima necessária</div>
-    </div>
-
-    <!-- PÁGINA: EQUIPAMENTOS -->
-    <div id="pagina-equipamentos" class="menu-pagina" style="display:none;">
-      <div class="menu-pagina-titulo">🎒 Equipamentos & Suprimentos</div>
-      <p class="menu-pagina-sub">Tudo que um aventureiro precisa para sobreviver além das muralhas de Mauern.</p>
-
-      <div class="menu-categoria-titulo">— Iluminação —</div>
-      <div class="menu-grid">
-        <div class="menu-item"><div class="menu-item-nome">Tocha</div><div class="menu-item-desc">1 hora de luz • Raio de 6m</div><div class="menu-item-preco">1 PC</div></div>
-        <div class="menu-item"><div class="menu-item-nome">Lanterna Coberta</div><div class="menu-item-desc">6 horas • Raio de 9m • Pode ser ocultada</div><div class="menu-item-preco">5 PO</div></div>
-        <div class="menu-item"><div class="menu-item-nome">Lanterna de Bullseye</div><div class="menu-item-desc">6 horas • Cone de 18m</div><div class="menu-item-preco">10 PO</div></div>
-        <div class="menu-item"><div class="menu-item-nome">Vela</div><div class="menu-item-desc">1 hora • Raio de 1,5m</div><div class="menu-item-preco">1 PC</div></div>
-        <div class="menu-item"><div class="menu-item-nome">Óleo (frasco)</div><div class="menu-item-desc">Combustível para 6 horas de lanterna</div><div class="menu-item-preco">1 PP</div></div>
-      </div>
-
-      <div class="menu-categoria-titulo">— Ferramentas & Utensílios —</div>
-      <div class="menu-grid">
-        <div class="menu-item"><div class="menu-item-nome">Corda de Cânhamo (15m)</div><div class="menu-item-desc">Suporta até 270kg</div><div class="menu-item-preco">1 PO</div></div>
-        <div class="menu-item"><div class="menu-item-nome">Corda de Seda (15m)</div><div class="menu-item-desc">Mais leve e resistente que cânhamo</div><div class="menu-item-preco">10 PO</div></div>
-        <div class="menu-item"><div class="menu-item-nome">Pé de Cabra</div><div class="menu-item-desc">Vantagem em testes de força para abrir portas</div><div class="menu-item-preco">2 PO</div></div>
-        <div class="menu-item"><div class="menu-item-nome">Ferramentas de Ladrão</div><div class="menu-item-desc">Gazuas, espelhos e outros utensílios</div><div class="menu-item-preco">25 PO</div></div>
-        <div class="menu-item"><div class="menu-item-nome">Algemas</div><div class="menu-item-desc">CA 19 • Escape CD 20</div><div class="menu-item-preco">2 PO</div></div>
-        <div class="menu-item"><div class="menu-item-nome">Pederneira e Isqueiro</div><div class="menu-item-desc">Acende fogo em 1 minuto</div><div class="menu-item-preco">5 PC</div></div>
-        <div class="menu-item"><div class="menu-item-nome">Ampulheta</div><div class="menu-item-desc">Mede intervalos de 1 hora</div><div class="menu-item-preco">25 PO</div></div>
-        <div class="menu-item"><div class="menu-item-nome">Lupa</div><div class="menu-item-desc">Vantagem em testes de perícia que envolvam detalhe fino</div><div class="menu-item-preco">100 PO</div></div>
-      </div>
-
-      <div class="menu-categoria-titulo">— Recipientes & Transporte —</div>
-      <div class="menu-grid">
-        <div class="menu-item"><div class="menu-item-nome">Mochila</div><div class="menu-item-desc">Capacidade: 30kg</div><div class="menu-item-preco">2 PO</div></div>
-        <div class="menu-item"><div class="menu-item-nome">Bolsa</div><div class="menu-item-desc">Capacidade: 6kg ou 1.000 esferas</div><div class="menu-item-preco">5 PC</div></div>
-        <div class="menu-item"><div class="menu-item-nome">Aljava</div><div class="menu-item-desc">Capacidade: 20 flechas ou virotes</div><div class="menu-item-preco">1 PO</div></div>
-        <div class="menu-item"><div class="menu-item-nome">Cantil</div><div class="menu-item-desc">Capacidade: 4 litros</div><div class="menu-item-preco">2 PP</div></div>
-        <div class="menu-item"><div class="menu-item-nome">Baú</div><div class="menu-item-desc">Capacidade: 150kg</div><div class="menu-item-preco">5 PO</div></div>
-      </div>
-
-      <div class="menu-categoria-titulo">— Suprimentos de Viagem —</div>
-      <div class="menu-grid">
-        <div class="menu-item"><div class="menu-item-nome">Rações de Viagem (1 dia)</div><div class="menu-item-desc">Comida seca e preservada</div><div class="menu-item-preco">5 PP</div></div>
-        <div class="menu-item"><div class="menu-item-nome">Saco de Dormir</div><div class="menu-item-desc">Conforto básico para descanso longo</div><div class="menu-item-preco">1 PO</div></div>
-        <div class="menu-item"><div class="menu-item-nome">Tenda (2 pessoas)</div><div class="menu-item-desc">Abrigo simples para acampamento</div><div class="menu-item-preco">2 PO</div></div>
-        <div class="menu-item"><div class="menu-item-nome">Kit de Cura</div><div class="menu-item-desc">10 usos • Estabiliza criatura a 0 PV</div><div class="menu-item-preco">5 PO</div></div>
-      </div>
-
-      <div class="menu-nota">* PC = Cobre &nbsp;|&nbsp; PP = Prata &nbsp;|&nbsp; PO = Ouro &nbsp;|&nbsp; PL = Platina &nbsp;|&nbsp; 10 PC = 1 PP &nbsp;|&nbsp; 10 PP = 1 PO &nbsp;|&nbsp; 10 PO = 1 PL</div>
-    </div>
-
-    <!-- PÁGINA: BAR -->
-    <div id="pagina-bar" class="menu-pagina" style="display:none;">
-      <div class="menu-pagina-titulo">🍺 Cardápio do Bar</div>
-      <p class="menu-pagina-sub">O melhor da culinária de Mauern — para matar a fome e a sede após longas jornadas.</p>
-
-      <div class="menu-categoria-titulo">— Entradas & Petiscos —</div>
-      <div class="menu-grid">
-        <div class="menu-item"><div class="menu-item-nome">Pão Rústico com Manteiga</div><div class="menu-item-desc">Pão quentinho do forno com manteiga temperada com ervas do campo</div><div class="menu-item-preco">2 PC</div></div>
-        <div class="menu-item"><div class="menu-item-nome">Tábua de Queijos e Embutidos</div><div class="menu-item-desc">Variedade de queijos curados, linguiça defumada e picles da casa</div><div class="menu-item-preco">5 PC</div></div>
-        <div class="menu-item"><div class="menu-item-nome">Sopa do Dia</div><div class="menu-item-desc">Receita da cozinheira — muda todo dia, mas nunca decepciona</div><div class="menu-item-preco">3 PC</div></div>
-        <div class="menu-item"><div class="menu-item-nome">Cogumelos Fritos</div><div class="menu-item-desc">Cogumelos selvagens salteados em azeite e alho com ervas frescas</div><div class="menu-item-preco">4 PC</div></div>
-        <div class="menu-item"><div class="menu-item-nome">Ossos de Galinha Assados</div><div class="menu-item-desc">Galinha caipira assada lentamente com mel e pimenta</div><div class="menu-item-preco">5 PC</div></div>
-      </div>
-
-      <div class="menu-categoria-titulo">— Pratos Principais —</div>
-      <div class="menu-grid">
-        <div class="menu-item"><div class="menu-item-nome">Ensopado de Carneiro</div><div class="menu-item-desc">Carneiro cozido lentamente com raízes, cebola e especiarias do sul — prato do dia</div><div class="menu-item-preco">1 PP</div></div>
-        <div class="menu-item"><div class="menu-item-nome">Costelinha de Javali</div><div class="menu-item-desc">Costelinha defumada marinada em cerveja escura e mel, servida com pão</div><div class="menu-item-preco">2 PP</div></div>
-        <div class="menu-item"><div class="menu-item-nome">Truta Grelhada do Rio</div><div class="menu-item-desc">Peixe fresco do rio que corta Mauern, temperado com limão e ervas</div><div class="menu-item-preco">1 PP 5 PC</div></div>
-        <div class="menu-item"><div class="menu-item-nome">Guisado do Aventureiro</div><div class="menu-item-desc">Mistura generosa de carne, legumes e grãos — para quem precisa de energia para a estrada</div><div class="menu-item-preco">8 PC</div></div>
-        <div class="menu-item destaque"><div class="menu-item-nome">Assado da Casa</div><div class="menu-item-desc">Especialidade do chef — peça ao garçom o que está no forno hoje</div><div class="menu-item-preco">2 PP 5 PC</div></div>
-      </div>
-
-      <div class="menu-categoria-titulo">— Sobremesas —</div>
-      <div class="menu-grid">
-        <div class="menu-item"><div class="menu-item-nome">Torta de Maçã com Canela</div><div class="menu-item-desc">Receita da avó da cozinheira — servida quente com creme de leite</div><div class="menu-item-preco">5 PC</div></div>
-        <div class="menu-item"><div class="menu-item-nome">Mel com Nozes</div><div class="menu-item-desc">Nozes tostadas banhadas em mel silvestre — simples e delicioso</div><div class="menu-item-preco">3 PC</div></div>
-        <div class="menu-item"><div class="menu-item-nome">Pudim de Pão</div><div class="menu-item-desc">Pão velho embebido em leite, ovos e especiarias, assado até dourar</div><div class="menu-item-preco">4 PC</div></div>
-      </div>
-
-      <div class="menu-categoria-titulo">— Bebidas Sem Álcool —</div>
-      <div class="menu-grid">
-        <div class="menu-item"><div class="menu-item-nome">Água Fresca</div><div class="menu-item-desc">Do poço mais limpo de Mauern — ou pelo menos é o que dizem</div><div class="menu-item-preco">1 PC</div></div>
-        <div class="menu-item"><div class="menu-item-nome">Chá de Ervas</div><div class="menu-item-desc">Mistura da casa com ervas do campo — camomila, menta e outras</div><div class="menu-item-preco">2 PC</div></div>
-        <div class="menu-item"><div class="menu-item-nome">Suco de Fruta da Estação</div><div class="menu-item-desc">Frutas prensadas na hora — varia conforme a época do ano</div><div class="menu-item-preco">3 PC</div></div>
-        <div class="menu-item"><div class="menu-item-nome">Leite Quente com Mel</div><div class="menu-item-desc">Para as noites frias de Mauern</div><div class="menu-item-preco">2 PC</div></div>
-      </div>
-
-      <div class="menu-categoria-titulo">— Cervejas & Ales —</div>
-      <div class="menu-grid">
-        <div class="menu-item"><div class="menu-item-nome">Cerveja da Casa (caneca)</div><div class="menu-item-desc">Ale dourada de produção própria — leve e refrescante</div><div class="menu-item-preco">4 PC</div></div>
-        <div class="menu-item"><div class="menu-item-nome">Cerveja Escura (caneca)</div><div class="menu-item-desc">Ale encorpada com notas de caramelo e malte torrado</div><div class="menu-item-preco">6 PC</div></div>
-        <div class="menu-item"><div class="menu-item-nome">Cerveja Importada (caneca)</div><div class="menu-item-desc">Vinda de Rupburam — mais forte, com gosto de montanha</div><div class="menu-item-preco">1 PP</div></div>
-        <div class="menu-item"><div class="menu-item-nome">Barril Compartilhado</div><div class="menu-item-desc">Para a mesa inteira — cerveja da casa em quantidade generosa</div><div class="menu-item-preco">3 PP</div></div>
-      </div>
-
-      <div class="menu-categoria-titulo">— Vinhos & Licores —</div>
-      <div class="menu-grid">
-        <div class="menu-item"><div class="menu-item-nome">Vinho Tinto (taça)</div><div class="menu-item-desc">Uvas do sul de Calfenda — encorpado e seco</div><div class="menu-item-preco">5 PC</div></div>
-        <div class="menu-item"><div class="menu-item-nome">Vinho Branco (taça)</div><div class="menu-item-desc">Leve e frutado — perfeito para acompanhar peixe</div><div class="menu-item-preco">5 PC</div></div>
-        <div class="menu-item"><div class="menu-item-nome">Hidromel (taça)</div><div class="menu-item-desc">Mel fermentado com especiarias — bebida dos anciões</div><div class="menu-item-preco">8 PC</div></div>
-        <div class="menu-item destaque"><div class="menu-item-nome">Aguardente de Venguard</div><div class="menu-item-desc">Destilado forte trazido pelos soldados — não é para os fracos de estômago</div><div class="menu-item-preco">1 PP 5 PC</div></div>
-        <div class="menu-item"><div class="menu-item-nome">Licor de Ervas da Casa</div><div class="menu-item-desc">Receita secreta do dono — dizem que tem propriedades especiais...</div><div class="menu-item-preco">2 PP</div></div>
-      </div>
-
-      <div class="menu-nota">* Preços por porção individual &nbsp;|&nbsp; Hospedagem no andar de cima: 5 PP por noite</div>
-    </div>
-
-    <!-- PÁGINA: MAUERN -->
-    <div id="pagina-mauern" class="menu-pagina" style="display:none;">
-      <div class="menu-pagina-titulo">🏙 Mauern</div>
-      <p class="menu-pagina-sub">Estabelecimentos, tavernas e serviços encontrados na capital de Mondriau.</p>
-
-      <!-- PORCO CANTANDO -->
-      <div style="border:1px solid rgba(139,90,43,0.25);border-radius:2px;margin-bottom:1.5rem;overflow:hidden;">
-        <div style="background:rgba(139,90,43,0.12);padding:0.8rem 1.2rem;border-bottom:1px solid rgba(139,90,43,0.2);">
-          <span style="font-family:'Cinzel Decorative',serif;font-size:1rem;color:var(--ink);">🐷 Porco Cantando</span>
-          <span style="font-family:'Crimson Text',serif;font-size:0.85rem;color:var(--stone);margin-left:1rem;font-style:italic;">Bar & Hospedagem — Zona Pobre</span>
-        </div>
-        <div style="padding:1rem 1.2rem;">
-
-          <div class="menu-categoria-titulo">— Hospedagem —</div>
-          <div class="menu-grid">
-            <div class="menu-item"><div class="menu-item-nome">Quarto Simples (por noite)</div><div class="menu-item-desc">Cama individual, escrivaninha e talvez uma janela. Simples mas funcional.</div><div class="menu-item-preco">5 PP</div></div>
-          </div>
-
-          <div class="menu-categoria-titulo">— Entradas & Petiscos —</div>
-          <div class="menu-grid">
-            <div class="menu-item"><div class="menu-item-nome">Pão Rústico com Manteiga</div><div class="menu-item-desc">Pão quentinho do forno com manteiga temperada com ervas do campo</div><div class="menu-item-preco">2 PC</div></div>
-            <div class="menu-item"><div class="menu-item-nome">Tábua de Queijos e Embutidos</div><div class="menu-item-desc">Variedade de queijos curados, linguiça defumada e picles da casa</div><div class="menu-item-preco">5 PC</div></div>
-            <div class="menu-item"><div class="menu-item-nome">Sopa do Dia</div><div class="menu-item-desc">Receita da cozinheira — muda todo dia, mas nunca decepciona</div><div class="menu-item-preco">3 PC</div></div>
-            <div class="menu-item"><div class="menu-item-nome">Cogumelos Fritos</div><div class="menu-item-desc">Cogumelos selvagens salteados em azeite e alho com ervas frescas</div><div class="menu-item-preco">4 PC</div></div>
-            <div class="menu-item"><div class="menu-item-nome">Ossos de Galinha Assados</div><div class="menu-item-desc">Galinha caipira assada lentamente com mel e pimenta</div><div class="menu-item-preco">5 PC</div></div>
-          </div>
-
-          <div class="menu-categoria-titulo">— Pratos Principais —</div>
-          <div class="menu-grid">
-            <div class="menu-item"><div class="menu-item-nome">Ensopado de Carneiro</div><div class="menu-item-desc">Carneiro cozido lentamente com raízes, cebola e especiarias do sul</div><div class="menu-item-preco">1 PP</div></div>
-            <div class="menu-item"><div class="menu-item-nome">Costelinha de Javali</div><div class="menu-item-desc">Costelinha defumada marinada em cerveja escura e mel, servida com pão</div><div class="menu-item-preco">2 PP</div></div>
-            <div class="menu-item"><div class="menu-item-nome">Truta Grelhada do Rio</div><div class="menu-item-desc">Peixe fresco do rio que corta Mauern, temperado com limão e ervas</div><div class="menu-item-preco">1 PP 5 PC</div></div>
-            <div class="menu-item"><div class="menu-item-nome">Guisado do Aventureiro</div><div class="menu-item-desc">Mistura generosa de carne, legumes e grãos — para quem precisa de energia</div><div class="menu-item-preco">8 PC</div></div>
-            <div class="menu-item destaque"><div class="menu-item-nome">Assado da Casa</div><div class="menu-item-desc">Especialidade do chef — peça ao garçom o que está no forno hoje</div><div class="menu-item-preco">2 PP 5 PC</div></div>
-          </div>
-
-          <div class="menu-categoria-titulo">— Sobremesas —</div>
-          <div class="menu-grid">
-            <div class="menu-item"><div class="menu-item-nome">Torta de Maçã com Canela</div><div class="menu-item-desc">Receita da avó da cozinheira — servida quente com creme de leite</div><div class="menu-item-preco">5 PC</div></div>
-            <div class="menu-item"><div class="menu-item-nome">Mel com Nozes</div><div class="menu-item-desc">Nozes tostadas banhadas em mel silvestre — simples e delicioso</div><div class="menu-item-preco">3 PC</div></div>
-            <div class="menu-item"><div class="menu-item-nome">Pudim de Pão</div><div class="menu-item-desc">Pão velho embebido em leite, ovos e especiarias, assado até dourar</div><div class="menu-item-preco">4 PC</div></div>
-          </div>
-
-          <div class="menu-categoria-titulo">— Bebidas Sem Álcool —</div>
-          <div class="menu-grid">
-            <div class="menu-item"><div class="menu-item-nome">Água Fresca</div><div class="menu-item-desc">Do poço mais limpo de Mauern — ou pelo menos é o que dizem</div><div class="menu-item-preco">1 PC</div></div>
-            <div class="menu-item"><div class="menu-item-nome">Chá de Ervas</div><div class="menu-item-desc">Mistura da casa com ervas do campo — camomila, menta e outras</div><div class="menu-item-preco">2 PC</div></div>
-            <div class="menu-item"><div class="menu-item-nome">Suco de Fruta da Estação</div><div class="menu-item-desc">Frutas prensadas na hora — varia conforme a época do ano</div><div class="menu-item-preco">3 PC</div></div>
-            <div class="menu-item"><div class="menu-item-nome">Leite Quente com Mel</div><div class="menu-item-desc">Para as noites frias de Mauern</div><div class="menu-item-preco">2 PC</div></div>
-          </div>
-
-          <div class="menu-categoria-titulo">— Cervejas & Ales —</div>
-          <div class="menu-grid">
-            <div class="menu-item"><div class="menu-item-nome">Cerveja da Casa (caneca)</div><div class="menu-item-desc">Ale dourada de produção própria — leve e refrescante</div><div class="menu-item-preco">4 PC</div></div>
-            <div class="menu-item"><div class="menu-item-nome">Cerveja Escura (caneca)</div><div class="menu-item-desc">Ale encorpada com notas de caramelo e malte torrado</div><div class="menu-item-preco">6 PC</div></div>
-            <div class="menu-item"><div class="menu-item-nome">Cerveja Importada (caneca)</div><div class="menu-item-desc">Vinda de Rupburam — mais forte, com gosto de montanha</div><div class="menu-item-preco">1 PP</div></div>
-            <div class="menu-item"><div class="menu-item-nome">Barril Compartilhado</div><div class="menu-item-desc">Para a mesa inteira — cerveja da casa em quantidade generosa</div><div class="menu-item-preco">3 PP</div></div>
-          </div>
-
-          <div class="menu-categoria-titulo">— Vinhos & Licores —</div>
-          <div class="menu-grid">
-            <div class="menu-item"><div class="menu-item-nome">Vinho Tinto (taça)</div><div class="menu-item-desc">Uvas do sul de Calfenda — encorpado e seco</div><div class="menu-item-preco">5 PC</div></div>
-            <div class="menu-item"><div class="menu-item-nome">Vinho Branco (taça)</div><div class="menu-item-desc">Leve e frutado — perfeito para acompanhar peixe</div><div class="menu-item-preco">5 PC</div></div>
-            <div class="menu-item"><div class="menu-item-nome">Hidromel (taça)</div><div class="menu-item-desc">Mel fermentado com especiarias — bebida dos anciões</div><div class="menu-item-preco">8 PC</div></div>
-            <div class="menu-item destaque"><div class="menu-item-nome">Aguardente de Venguard</div><div class="menu-item-desc">Destilado forte trazido pelos soldados — não é para os fracos de estômago</div><div class="menu-item-preco">1 PP 5 PC</div></div>
-            <div class="menu-item"><div class="menu-item-nome">Licor de Ervas da Casa</div><div class="menu-item-desc">Receita secreta do dono — dizem que tem propriedades especiais...</div><div class="menu-item-preco">2 PP</div></div>
-          </div>
-
-          <div class="menu-nota">* Quartos simples: cama individual, escrivaninha e talvez uma janela &nbsp;|&nbsp; Mais estabelecimentos em breve</div>
-        </div>
-      </div>
-
-    </div>
-
-  </div>
-</div>
-</section>
-
 <style>
-.menu-livro {
-  max-width: 820px; width: 100%;
-  background: linear-gradient(160deg, #f5edd8 0%, #ead9b0 50%, #d4b882 100%);
-  border-radius: 3px;
-  box-shadow: 0 0 0 1px rgba(139,90,43,0.3), -6px 0 20px rgba(0,0,0,0.4), 6px 0 20px rgba(0,0,0,0.2), 0 12px 50px rgba(0,0,0,0.6);
-  position: relative;
-  overflow: hidden;
+#loja-pergaminho {
+  background:#f2e8d5;
+  border-radius:4px;
+  overflow:hidden;
+  box-shadow:0 4px 24px rgba(0,0,0,0.5), inset 0 0 60px rgba(139,90,43,0.08);
 }
-.menu-livro::before {
-  content: '';
-  position: absolute;
-  left: 0; top: 0; bottom: 0;
-  width: 18px;
-  background: linear-gradient(90deg, rgba(100,60,20,0.5), rgba(100,60,20,0.1));
-  border-right: 1px solid rgba(139,90,43,0.3);
-  z-index: 1;
+.lj-bc {
+  font-family:'Cinzel',serif;
+  font-size:0.62rem;
+  letter-spacing:0.18em;
+  color:#9b7b5a;
+  text-transform:uppercase;
+  text-align:center;
+  padding:0.7rem 1rem 0;
+  min-height:1.4rem;
 }
-.menu-tabs {
-  display: flex; gap: 0; border-bottom: 2px solid rgba(139,90,43,0.25);
-  padding-left: 18px; background: rgba(139,90,43,0.08);
+.lj-titulo {
+  font-family:'Cinzel Decorative',serif;
+  font-size:1.25rem;
+  color:#2c1a0e;
+  text-align:center;
+  margin:1rem 0 0.3rem;
 }
-.menu-tab {
-  font-family: 'Cinzel', serif; font-size: 0.78rem; letter-spacing: 0.15em;
-  text-transform: uppercase; padding: 0.9rem 1.5rem; cursor: pointer;
-  border: none; border-right: 1px solid rgba(139,90,43,0.15);
-  background: transparent; color: var(--ink-light);
-  transition: all 0.2s; position: relative;
+.lj-sub {
+  font-family:'Crimson Text',serif;
+  font-size:0.95rem;
+  color:#6b5a4e;
+  text-align:center;
+  font-style:italic;
+  margin-bottom:0.5rem;
 }
-.menu-tab:hover { background: rgba(139,90,43,0.1); color: var(--ink); }
-.menu-tab.active {
-  background: linear-gradient(160deg, #f5edd8, #ead9b0);
-  color: var(--ink); font-weight: 600;
+.lj-divider {
+  height:1px;
+  background:linear-gradient(90deg,transparent,#c9a227,transparent);
+  margin:0.8rem 0 1.2rem;
 }
-.menu-tab.active::after {
-  content: ''; position: absolute; bottom: -2px; left: 0; right: 0;
-  height: 2px; background: linear-gradient(160deg, #f5edd8, #ead9b0);
+.lj-cat {
+  font-family:'Cinzel',serif;
+  font-size:0.63rem;
+  letter-spacing:0.22em;
+  text-transform:uppercase;
+  color:#9b7b5a;
+  text-align:center;
+  margin:1.2rem 0 0.8rem;
+  display:flex;
+  align-items:center;
+  gap:0.8rem;
 }
-.menu-pagina { padding: 2rem 2.5rem 2rem 3rem; color: var(--ink); }
-.menu-pagina-titulo {
-  font-family: 'Cinzel Decorative', serif; font-size: clamp(1.1rem, 2.5vw, 1.5rem);
-  color: var(--ink); text-align: center; margin-bottom: 0.4rem;
+.lj-cat span { flex:1; height:1px; background:rgba(139,90,43,0.25); }
+.lj-item {
+  background:#fff8ee;
+  border:1px solid rgba(139,90,43,0.2);
+  border-radius:2px;
+  padding:0.9rem 1.2rem;
+  margin-bottom:0.5rem;
+  cursor:pointer;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  transition:background 0.15s;
 }
-.menu-pagina-sub {
-  font-family: 'Crimson Text', serif; font-size: 1rem; color: var(--stone);
-  text-align: center; font-style: italic; margin-bottom: 1.8rem;
+.lj-item:hover { background:#fff0d8; }
+.lj-item-nome { font-family:'Cinzel',serif; font-size:0.95rem; color:#2c1a0e; }
+.lj-item-seta { color:#c9a227; font-size:1.1rem; }
+.lj-card {
+  background:#fff8ee;
+  border:1px solid rgba(139,90,43,0.15);
+  border-radius:2px;
+  padding:0.9rem 1rem;
+  margin-bottom:0.5rem;
 }
-.menu-categoria-titulo {
-  font-family: 'Cinzel', serif; font-size: 0.72rem; letter-spacing: 0.25em;
-  text-transform: uppercase; color: var(--stone); text-align: center;
-  margin: 1.5rem 0 1rem; position: relative;
+.lj-card.destaque { background:#fff0d4; border-color:rgba(139,90,43,0.3); }
+.lj-card-nome { font-family:'Cinzel',serif; font-size:0.95rem; color:#2c1a0e; text-align:center; margin-bottom:0.25rem; }
+.lj-card-desc { font-family:'Crimson Text',serif; font-size:0.9rem; color:#6b5a4e; text-align:center; margin-bottom:0.4rem; }
+.lj-card-preco { font-family:'Cinzel',serif; font-size:0.88rem; color:#8b1a1a; text-align:right; font-weight:600; }
+.lj-voltar {
+  font-family:'Cinzel',serif;
+  font-size:0.65rem;
+  letter-spacing:0.18em;
+  text-transform:uppercase;
+  color:#9b7b5a;
+  background:none;
+  border:none;
+  cursor:pointer;
+  display:block;
+  margin:1rem auto 0;
 }
-.menu-categoria-titulo::before, .menu-categoria-titulo::after {
-  content: ''; position: absolute; top: 50%;
-  width: 15%; height: 1px; background: rgba(44,26,14,0.2);
+.lj-voltar:hover { color:#2c1a0e; }
+.lj-nota {
+  font-family:'Crimson Text',serif;
+  font-size:0.82rem;
+  color:#9b7b5a;
+  text-align:center;
+  margin-top:1.5rem;
+  padding-top:1rem;
+  border-top:1px solid rgba(139,90,43,0.2);
+  font-style:italic;
 }
-.menu-categoria-titulo::before { left: 0; }
-.menu-categoria-titulo::after  { right: 0; }
-.menu-grid {
-  display: grid; grid-template-columns: repeat(auto-fill, minmax(220px, 1fr)); gap: 0.8rem;
-}
-.menu-item {
-  background: rgba(255,255,255,0.3); border: 1px solid rgba(139,90,43,0.15);
-  border-radius: 2px; padding: 0.8rem 1rem;
-  transition: background 0.2s, border-color 0.2s, transform 0.2s;
-}
-.menu-item:hover {
-  background: rgba(255,255,255,0.55); border-color: rgba(139,90,43,0.35);
-  transform: translateY(-2px);
-}
-.menu-item.destaque { border-color: rgba(201,162,39,0.5); background: rgba(201,162,39,0.1); }
-.menu-item-nome { font-family: 'Cinzel', serif; font-size: 0.85rem; color: var(--ink); margin-bottom: 0.25rem; }
-.menu-item-desc { font-family: 'Crimson Text', serif; font-size: 0.9rem; color: var(--stone); line-height: 1.4; margin-bottom: 0.4rem; }
-.menu-item-preco {
-  font-family: 'Cinzel', serif; font-size: 0.8rem; color: var(--blood);
-  font-weight: 600; text-align: right;
-}
-.menu-nota {
-  font-family: 'Crimson Text', serif; font-size: 0.85rem; color: var(--stone);
-  font-style: italic; text-align: center; margin-top: 1.5rem;
-  padding-top: 1rem; border-top: 1px solid rgba(44,26,14,0.15); opacity: 0.7;
-}
-@media (max-width:600px) {
-  .menu-pagina { padding: 1.2rem 1.2rem 1.2rem 1.8rem; }
-  .menu-tab { padding: 0.7rem 0.9rem; font-size: 0.68rem; }
-}
+#loja-inner { padding:1.2rem 1.5rem 2rem; }
 </style>
 
+  <div id="loja-entrada" style="text-align:center;">
+    <div class="badge badge-soon" style="margin-bottom:1rem;">Comércio</div>
+    <h2 style="opacity:1;margin-bottom:0.5rem;">Loja</h2>
+    <p style="opacity:0.7;margin-bottom:2rem;max-width:460px;margin-left:auto;margin-right:auto;">Estabelecimentos, tavernas e serviços de cada canto de Unterwelt.</p>
+    <button id="btn-entrar-loja" style="font-family:'Cinzel',serif;font-size:0.8rem;letter-spacing:0.2em;text-transform:uppercase;padding:0.9rem 2.2rem;background:rgba(201,162,39,0.12);border:1px solid rgba(201,162,39,0.4);color:#c9a227;cursor:pointer;border-radius:2px;transition:background 0.2s;">Entrar na Loja</button>
+  </div>
+
+  <div id="loja-conteudo" style="display:none;width:100%;max-width:680px;margin:0 auto;">
+    <div id="loja-pergaminho">
+      <div class="lj-bc" id="lj-bc"></div>
+      <div id="loja-inner">
+
+        <!-- N1 REGIOES -->
+        <div id="lj-n1">
+          <div class="lj-titulo">🌍 Regiões</div>
+          <div class="lj-divider"></div>
+          <div class="lj-cat"><span></span>Regiões de Unterwelt<span></span></div>
+          <div class="lj-item" id="lj-btn-mondriau">
+            <span class="lj-item-nome">🏙 Mondriau</span>
+            <span class="lj-item-seta">›</span>
+          </div>
+        </div>
+
+        <!-- N2 CIDADES -->
+        <div id="lj-n2" style="display:none;">
+          <div class="lj-titulo" id="lj-n2-titulo"></div>
+          <div class="lj-divider"></div>
+          <div class="lj-cat"><span></span>Cidades &amp; Locais<span></span></div>
+          <div id="lj-n2-lista"></div>
+          <button class="lj-voltar" id="lj-voltar-2">‹ Voltar</button>
+        </div>
+
+        <!-- N3 ESTABELECIMENTOS -->
+        <div id="lj-n3" style="display:none;">
+          <div class="lj-titulo" id="lj-n3-titulo"></div>
+          <div class="lj-divider"></div>
+          <div class="lj-cat"><span></span>Estabelecimentos<span></span></div>
+          <div id="lj-n3-lista"></div>
+          <button class="lj-voltar" id="lj-voltar-3">‹ Voltar</button>
+        </div>
+
+        <!-- N4 CARDAPIO -->
+        <div id="lj-n4" style="display:none;">
+
+          <div id="lj-estab-porco" style="display:none;">
+            <div class="lj-titulo">🐷 Porco Cantante</div>
+            <div class="lj-sub">Bar &amp; Hospedagem — Zona Pobre de Mauern</div>
+            <div class="lj-divider"></div>
+
+            <div class="lj-cat"><span></span>Hospedagem<span></span></div>
+            <div class="lj-card"><div class="lj-card-nome">Quarto Simples</div><div class="lj-card-desc">Cama individual, escrivaninha e talvez uma janela</div><div class="lj-card-preco">5 PP / noite</div></div>
+
+            <div class="lj-cat"><span></span>Entradas &amp; Petiscos<span></span></div>
+            <div class="lj-card"><div class="lj-card-nome">Pão Rústico com Manteiga</div><div class="lj-card-desc">Pão quentinho com manteiga temperada de ervas</div><div class="lj-card-preco">2 PC</div></div>
+            <div class="lj-card"><div class="lj-card-nome">Tábua de Queijos e Embutidos</div><div class="lj-card-desc">Queijos curados, linguiça defumada e picles da casa</div><div class="lj-card-preco">5 PC</div></div>
+            <div class="lj-card"><div class="lj-card-nome">Sopa do Dia</div><div class="lj-card-desc">Receita da cozinheira — muda todo dia</div><div class="lj-card-preco">3 PC</div></div>
+            <div class="lj-card"><div class="lj-card-nome">Cogumelos Fritos</div><div class="lj-card-desc">Cogumelos selvagens em azeite e alho</div><div class="lj-card-preco">4 PC</div></div>
+            <div class="lj-card"><div class="lj-card-nome">Ossos de Galinha Assados</div><div class="lj-card-desc">Galinha caipira assada com mel e pimenta</div><div class="lj-card-preco">5 PC</div></div>
+
+            <div class="lj-cat"><span></span>Pratos Principais<span></span></div>
+            <div class="lj-card"><div class="lj-card-nome">Ensopado de Carneiro</div><div class="lj-card-desc">Carneiro cozido com raízes e especiarias do sul</div><div class="lj-card-preco">1 PP</div></div>
+            <div class="lj-card"><div class="lj-card-nome">Costelinha de Javali</div><div class="lj-card-desc">Defumada em cerveja escura e mel, com pão</div><div class="lj-card-preco">2 PP</div></div>
+            <div class="lj-card"><div class="lj-card-nome">Truta Grelhada do Rio</div><div class="lj-card-desc">Peixe fresco com limão e ervas</div><div class="lj-card-preco">1 PP 5 PC</div></div>
+            <div class="lj-card"><div class="lj-card-nome">Guisado do Aventureiro</div><div class="lj-card-desc">Carne, legumes e grãos — para quem precisa de energia</div><div class="lj-card-preco">8 PC</div></div>
+            <div class="lj-card destaque"><div class="lj-card-nome">✦ Assado da Casa</div><div class="lj-card-desc">Especialidade do chef — peça ao garçom</div><div class="lj-card-preco">2 PP 5 PC</div></div>
+
+            <div class="lj-cat"><span></span>Sobremesas<span></span></div>
+            <div class="lj-card"><div class="lj-card-nome">Torta de Maçã com Canela</div><div class="lj-card-desc">Servida quente com creme de leite</div><div class="lj-card-preco">5 PC</div></div>
+            <div class="lj-card"><div class="lj-card-nome">Mel com Nozes</div><div class="lj-card-desc">Nozes tostadas em mel silvestre</div><div class="lj-card-preco">3 PC</div></div>
+            <div class="lj-card"><div class="lj-card-nome">Pudim de Pão</div><div class="lj-card-desc">Pão velho em leite, ovos e especiarias</div><div class="lj-card-preco">4 PC</div></div>
+
+            <div class="lj-cat"><span></span>Bebidas Sem Álcool<span></span></div>
+            <div class="lj-card"><div class="lj-card-nome">Água Fresca</div><div class="lj-card-desc">Do poço mais limpo de Mauern</div><div class="lj-card-preco">1 PC</div></div>
+            <div class="lj-card"><div class="lj-card-nome">Chá de Ervas</div><div class="lj-card-desc">Camomila, menta e ervas do campo</div><div class="lj-card-preco">2 PC</div></div>
+            <div class="lj-card"><div class="lj-card-nome">Suco da Estação</div><div class="lj-card-desc">Frutas prensadas na hora</div><div class="lj-card-preco">3 PC</div></div>
+            <div class="lj-card"><div class="lj-card-nome">Leite Quente com Mel</div><div class="lj-card-desc">Para as noites frias de Mauern</div><div class="lj-card-preco">2 PC</div></div>
+
+            <div class="lj-cat"><span></span>Cervejas &amp; Ales<span></span></div>
+            <div class="lj-card"><div class="lj-card-nome">Cerveja da Casa (caneca)</div><div class="lj-card-desc">Ale dourada de produção própria</div><div class="lj-card-preco">4 PC</div></div>
+            <div class="lj-card"><div class="lj-card-nome">Cerveja Escura (caneca)</div><div class="lj-card-desc">Notas de caramelo e malte torrado</div><div class="lj-card-preco">6 PC</div></div>
+            <div class="lj-card"><div class="lj-card-nome">Cerveja Importada (caneca)</div><div class="lj-card-desc">De Rupburam — mais forte, gosto de montanha</div><div class="lj-card-preco">1 PP</div></div>
+            <div class="lj-card"><div class="lj-card-nome">Barril Compartilhado</div><div class="lj-card-desc">Cerveja da casa para a mesa inteira</div><div class="lj-card-preco">3 PP</div></div>
+
+            <div class="lj-nota">* Quartos simples: cama individual, escrivaninha e talvez uma janela</div>
+          </div>
+
+
+          <!-- SONHO DOS CAMPOS -->
+          <div id="lj-estab-padaria" style="display:none;">
+            <div class="lj-titulo">🥐 Sonho dos Campos</div>
+            <div class="lj-sub">Padaria &amp; Confeitaria — Rua dos Doces, Mauern</div>
+            <div class="lj-divider"></div>
+
+            <div class="lj-cat"><span></span>Pães<span></span></div>
+            <div class="lj-card"><div class="lj-card-nome">Pão Branco</div><div class="lj-card-desc">Macio por dentro, crocante por fora — assado toda manhã</div><div class="lj-card-preco">5 PC</div></div>
+            <div class="lj-card"><div class="lj-card-nome">Pão de Centeio</div><div class="lj-card-desc">Escuro e denso, dura dias na mochila</div><div class="lj-card-preco">5 PC</div></div>
+            <div class="lj-card"><div class="lj-card-nome">Pão de Ervas</div><div class="lj-card-desc">Temperado com alecrim e tomilho frescos</div><div class="lj-card-preco">8 PC</div></div>
+            <div class="lj-card"><div class="lj-card-nome">Pão de Mel</div><div class="lj-card-desc">Ligeiramente adocicado, perfeito com manteiga</div><div class="lj-card-preco">1 PP</div></div>
+            <div class="lj-card"><div class="lj-card-nome">Broa de Milho</div><div class="lj-card-desc">Receita do interior — rústica e saborosa</div><div class="lj-card-preco">5 PC</div></div>
+
+            <div class="lj-cat"><span></span>Doces &amp; Confeitaria<span></span></div>
+            <div class="lj-card"><div class="lj-card-nome">Bolinho de Canela</div><div class="lj-card-desc">Macio, enrolado e coberto de açúcar</div><div class="lj-card-preco">8 PC</div></div>
+            <div class="lj-card"><div class="lj-card-nome">Croissant de Manteiga</div><div class="lj-card-desc">Folhado e dourado — orgulho da casa</div><div class="lj-card-preco">1 PP</div></div>
+            <div class="lj-card"><div class="lj-card-nome">Torta de Frutas</div><div class="lj-card-desc">Frutas da estação sobre massa crocante</div><div class="lj-card-preco">1 PP 5 PC</div></div>
+            <div class="lj-card"><div class="lj-card-nome">Biscoito de Gengibre</div><div class="lj-card-desc">Crocante e perfumado — vendido por dúzia</div><div class="lj-card-preco">8 PC</div></div>
+            <div class="lj-card"><div class="lj-card-nome">Éclair de Chocolate</div><div class="lj-card-desc">Importado de Calfenda — raro e indulgente</div><div class="lj-card-preco">2 PP</div></div>
+
+            <div class="lj-cat"><span></span>Para Levar<span></span></div>
+            <div class="lj-card"><div class="lj-card-nome">Pão de Viagem (3 unidades)</div><div class="lj-card-desc">Pão compacto e nutritivo para a estrada</div><div class="lj-card-preco">1 PP 5 PC</div></div>
+            <div class="lj-card"><div class="lj-card-nome">Cesta do Dia</div><div class="lj-card-desc">Sortido do forno — o que sobrou da manhã</div><div class="lj-card-preco">3 PP</div></div>
+
+            <div class="lj-cat"><span></span>Especialidade da Casa<span></span></div>
+            <div class="lj-card destaque"><div class="lj-card-nome">✦ Pão do Sonho</div><div class="lj-card-desc">Pão artesanal coberto com o pó especial da casa — dizem que quem prova sempre volta</div><div class="lj-card-preco">5 PP</div></div>
+
+            <div class="lj-nota">* Produção limitada — o Pão do Sonho costuma esgotar antes do meio-dia</div>
+          </div>
+
+          <!-- FERREIRO CLY -->
+          <div id="lj-estab-ferreiro" style="display:none;">
+            <div class="lj-titulo">⚒ Ferreiro Cly</div>
+            <div class="lj-sub">Armas &amp; Armaduras — Mauern</div>
+            <div class="lj-divider"></div>
+
+            <div class="lj-cat"><span></span>Armas Simples — Corpo a Corpo<span></span></div>
+            <div class="lj-card"><div class="lj-card-nome">Clava</div><div class="lj-card-desc">1d4 contundente • Leve</div><div class="lj-card-preco">1 PP</div></div>
+            <div class="lj-card"><div class="lj-card-nome">Adaga</div><div class="lj-card-desc">1d4 perfurante • Leve, arremesso, finura</div><div class="lj-card-preco">2 PO</div></div>
+            <div class="lj-card"><div class="lj-card-nome">Foice</div><div class="lj-card-desc">1d4 cortante • Leve</div><div class="lj-card-preco">1 PP</div></div>
+            <div class="lj-card"><div class="lj-card-nome">Lança</div><div class="lj-card-desc">1d6 perfurante • Arremesso, versátil (1d8)</div><div class="lj-card-preco">1 PO</div></div>
+            <div class="lj-card"><div class="lj-card-nome">Machadinha</div><div class="lj-card-desc">1d6 cortante • Leve, arremesso</div><div class="lj-card-preco">5 PO</div></div>
+            <div class="lj-card"><div class="lj-card-nome">Martelo Leve</div><div class="lj-card-desc">1d4 contundente • Leve, arremesso</div><div class="lj-card-preco">2 PO</div></div>
+            <div class="lj-card"><div class="lj-card-nome">Porrete</div><div class="lj-card-desc">1d6 contundente • Versátil (1d8)</div><div class="lj-card-preco">2 PP</div></div>
+
+            <div class="lj-cat"><span></span>Armas Simples — Á Distância<span></span></div>
+            <div class="lj-card"><div class="lj-card-nome">Besta Leve</div><div class="lj-card-desc">1d8 perfurante • Munição, recarga, alcance 24/96</div><div class="lj-card-preco">25 PO</div></div>
+            <div class="lj-card"><div class="lj-card-nome">Arco Curto</div><div class="lj-card-desc">1d6 perfurante • Munição, duas mãos, alcance 24/96</div><div class="lj-card-preco">25 PO</div></div>
+            <div class="lj-card"><div class="lj-card-nome">Dardo</div><div class="lj-card-desc">1d4 perfurante • Finura, arremesso, alcance 6/18</div><div class="lj-card-preco">5 PC</div></div>
+
+            <div class="lj-cat"><span></span>Armas Marciais — Corpo a Corpo<span></span></div>
+            <div class="lj-card"><div class="lj-card-nome">Espada Longa</div><div class="lj-card-desc">1d8 cortante • Versátil (1d10)</div><div class="lj-card-preco">15 PO</div></div>
+            <div class="lj-card"><div class="lj-card-nome">Espada Curta</div><div class="lj-card-desc">1d6 perfurante • Finura, leve</div><div class="lj-card-preco">10 PO</div></div>
+            <div class="lj-card"><div class="lj-card-nome">Machado Grande</div><div class="lj-card-desc">1d12 cortante • Pesada, duas mãos</div><div class="lj-card-preco">30 PO</div></div>
+            <div class="lj-card"><div class="lj-card-nome">Martelo de Guerra</div><div class="lj-card-desc">1d8 contundente • Versátil (1d10)</div><div class="lj-card-preco">15 PO</div></div>
+            <div class="lj-card destaque"><div class="lj-card-nome">✦ Montante</div><div class="lj-card-desc">2d6 cortante • Pesada, duas mãos</div><div class="lj-card-preco">50 PO</div></div>
+
+            <div class="lj-cat"><span></span>Armas Marciais — Á Distância<span></span></div>
+            <div class="lj-card"><div class="lj-card-nome">Arco Longo</div><div class="lj-card-desc">1d8 perfurante • Munição, pesada, duas mãos, alcance 45/180</div><div class="lj-card-preco">50 PO</div></div>
+            <div class="lj-card"><div class="lj-card-nome">Besta Pesada</div><div class="lj-card-desc">1d10 perfurante • Munição, pesada, recarga, duas mãos, alcance 30/120</div><div class="lj-card-preco">50 PO</div></div>
+
+            <div class="lj-cat"><span></span>Armaduras Leves<span></span></div>
+            <div class="lj-card"><div class="lj-card-nome">Armadura de Couro</div><div class="lj-card-desc">CA 11 + Des</div><div class="lj-card-preco">10 PO</div></div>
+            <div class="lj-card"><div class="lj-card-nome">Armadura Estofada</div><div class="lj-card-desc">CA 11 + Des • Desvantagem em Furtividade</div><div class="lj-card-preco">5 PO</div></div>
+            <div class="lj-card"><div class="lj-card-nome">Cota de Malha Leve</div><div class="lj-card-desc">CA 13 + Des (máx 2) • Desvantagem em Furtividade</div><div class="lj-card-preco">45 PO</div></div>
+
+            <div class="lj-cat"><span></span>Armaduras Médias<span></span></div>
+            <div class="lj-card"><div class="lj-card-nome">Cota de Malha</div><div class="lj-card-desc">CA 14 + Des (máx 2) • Desvantagem em Furtividade</div><div class="lj-card-preco">50 PO</div></div>
+            <div class="lj-card"><div class="lj-card-nome">Armadura de Escamas</div><div class="lj-card-desc">CA 14 + Des (máx 2) • Desvantagem em Furtividade</div><div class="lj-card-preco">50 PO</div></div>
+            <div class="lj-card"><div class="lj-card-nome">Peitoral</div><div class="lj-card-desc">CA 14 + Des (máx 2)</div><div class="lj-card-preco">400 PO</div></div>
+
+            <div class="lj-cat"><span></span>Armaduras Pesadas<span></span></div>
+            <div class="lj-card"><div class="lj-card-nome">Cota de Anéis</div><div class="lj-card-desc">CA 14 • Desvantagem em Furtividade</div><div class="lj-card-preco">30 PO</div></div>
+            <div class="lj-card"><div class="lj-card-nome">Cota de Placas</div><div class="lj-card-desc">CA 16 • Desvantagem em Furtividade, For 13</div><div class="lj-card-preco">200 PO</div></div>
+            <div class="lj-card destaque"><div class="lj-card-nome">✦ Armadura Completa</div><div class="lj-card-desc">CA 18 • Desvantagem em Furtividade, For 15</div><div class="lj-card-preco">1.500 PO</div></div>
+
+            <div class="lj-cat"><span></span>Escudos<span></span></div>
+            <div class="lj-card"><div class="lj-card-nome">Escudo</div><div class="lj-card-desc">+2 CA</div><div class="lj-card-preco">10 PO</div></div>
+
+            <div class="lj-nota">* Encomendas especiais disponíveis — pergunte ao Cly</div>
+          </div>
+
+          <!-- GERAL DO GERALDO -->
+          <div id="lj-estab-geral" style="display:none;">
+            <div class="lj-titulo">🎒 Geral do Geraldo</div>
+            <div class="lj-sub">Equipamentos &amp; Suprimentos — Mauern</div>
+            <div class="lj-divider"></div>
+
+            <div class="lj-cat"><span></span>Aventura &amp; Exploração<span></span></div>
+            <div class="lj-card"><div class="lj-card-nome">Mochila</div><div class="lj-card-desc">Capacidade 30 itens</div><div class="lj-card-preco">2 PO</div></div>
+            <div class="lj-card"><div class="lj-card-nome">Corda (15m)</div><div class="lj-card-desc">Cânhamo resistente</div><div class="lj-card-preco">1 PO</div></div>
+            <div class="lj-card"><div class="lj-card-nome">Tocha</div><div class="lj-card-desc">Ilumina 6m, dura 1 hora</div><div class="lj-card-preco">1 PC</div></div>
+            <div class="lj-card"><div class="lj-card-nome">Lanterna Coberta</div><div class="lj-card-desc">Ilumina 9m por 6h com 1 frasco de óleo</div><div class="lj-card-preco">5 PO</div></div>
+            <div class="lj-card"><div class="lj-card-nome">Óleo (frasco)</div><div class="lj-card-desc">Combustível para lanterna ou arma incendiária</div><div class="lj-card-preco">1 PP</div></div>
+            <div class="lj-card"><div class="lj-card-nome">Picareta de Mineiro</div><div class="lj-card-desc">Ferramenta resistente para escavar</div><div class="lj-card-preco">2 PO</div></div>
+            <div class="lj-card"><div class="lj-card-nome">Pé de Cabra</div><div class="lj-card-desc">Vantagem em testes de For para abrir</div><div class="lj-card-preco">2 PO</div></div>
+            <div class="lj-card"><div class="lj-card-nome">Ganchos de Escalar</div><div class="lj-card-desc">Fixam corda em superfícies</div><div class="lj-card-preco">2 PO</div></div>
+            <div class="lj-card"><div class="lj-card-nome">Sílex e Isqueiro</div><div class="lj-card-desc">Para acender fogo</div><div class="lj-card-preco">5 PC</div></div>
+
+            <div class="lj-cat"><span></span>Saúde &amp; Sobrevivência<span></span></div>
+            <div class="lj-card destaque"><div class="lj-card-nome">✦ Poção de Cura</div><div class="lj-card-desc">Recupera 2d4+2 PV</div><div class="lj-card-preco">50 PO</div></div>
+            <div class="lj-card"><div class="lj-card-nome">Kit de Primeiros Socorros</div><div class="lj-card-desc">10 usos — estabiliza criaturas</div><div class="lj-card-preco">5 PO</div></div>
+            <div class="lj-card"><div class="lj-card-nome">Antídoto</div><div class="lj-card-desc">Vantagem em testes de veneno por 1 hora</div><div class="lj-card-preco">50 PO</div></div>
+            <div class="lj-card"><div class="lj-card-nome">Ração de Viagem (1 dia)</div><div class="lj-card-desc">Carne seca, biscoito duro e fruta</div><div class="lj-card-preco">5 PC</div></div>
+            <div class="lj-card"><div class="lj-card-nome">Odre de Água</div><div class="lj-card-desc">Capacidade 4 litros</div><div class="lj-card-preco">2 PC</div></div>
+
+            <div class="lj-cat"><span></span>Ferramentas &amp; Utilidades<span></span></div>
+            <div class="lj-card"><div class="lj-card-nome">Kit de Ladrão</div><div class="lj-card-desc">Necessário para arrombar fechaduras</div><div class="lj-card-preco">25 PO</div></div>
+            <div class="lj-card"><div class="lj-card-nome">Kit de Disfarce</div><div class="lj-card-desc">Maquiagem, roupas e adereços</div><div class="lj-card-preco">25 PO</div></div>
+            <div class="lj-card"><div class="lj-card-nome">Lupa</div><div class="lj-card-desc">Vantagem em identificar itens pequenos</div><div class="lj-card-preco">100 PO</div></div>
+            <div class="lj-card"><div class="lj-card-nome">Espelho de Bolso</div><div class="lj-card-desc">Aço polido — ver ao redor de cantos</div><div class="lj-card-preco">5 PO</div></div>
+            <div class="lj-card"><div class="lj-card-nome">Correntes (1,5m)</div><div class="lj-card-desc">CA 19, 10 PV para quebrar</div><div class="lj-card-preco">5 PO</div></div>
+
+            <div class="lj-cat"><span></span>Escrita &amp; Conhecimento<span></span></div>
+            <div class="lj-card"><div class="lj-card-nome">Livro em Branco</div><div class="lj-card-desc">100 páginas de pergaminho</div><div class="lj-card-preco">25 PO</div></div>
+            <div class="lj-card"><div class="lj-card-nome">Tinta (frasco)</div><div class="lj-card-desc">Preta — suficiente para 1 livro</div><div class="lj-card-preco">10 PO</div></div>
+            <div class="lj-card"><div class="lj-card-nome">Pergaminho em Branco</div><div class="lj-card-desc">Folha avulsa de qualidade</div><div class="lj-card-preco">1 PP</div></div>
+            <div class="lj-card"><div class="lj-card-nome">Mapa da Região</div><div class="lj-card-desc">Mauern e arredores de Mondriau</div><div class="lj-card-preco">5 PO</div></div>
+
+            <div class="lj-nota">* Estoques variam — o Geraldo não garante disponibilidade</div>
+          </div>
+
+          <button class="lj-voltar" id="lj-voltar-4">‹ Voltar</button>
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+</section>
+
 <script>
-function abrirLoja() {
-  document.getElementById('loja-entrada').style.display='none';
-  document.getElementById('loja-conteudo').style.display='block';
-}
-function abrirPagina(nome, btn) {
-  document.querySelectorAll('.menu-pagina').forEach(function(p){ p.style.display='none'; });
-  document.querySelectorAll('.menu-tab').forEach(function(t){ t.classList.remove('active'); });
-  document.getElementById('pagina-'+nome).style.display='block';
-  btn.classList.add('active');
-}
+(function() {
+  var R = '', C = '';
+  var dados = {
+    mondriau: { nome: 'Mondriau', cidades: {
+      mauern: { nome: 'Mauern', estabs: [
+        {id:'porco', nome:'Porco Cantante'},
+        {id:'padaria', nome:'Sonho dos Campos'},
+        {id:'ferreiro', nome:'Ferreiro Cly'},
+        {id:'geral', nome:'Geral do Geraldo'}
+      ]}
+    }}
+  };
+
+  function bc(partes) {
+    document.getElementById('lj-bc').innerHTML = partes.join(' › ');
+  }
+  function esc() {
+    ['lj-n1','lj-n2','lj-n3','lj-n4'].forEach(function(id) {
+      document.getElementById(id).style.display = 'none';
+    });
+  }
+  function criarItem(nome, cb) {
+    var d = document.createElement('div');
+    d.className = 'lj-item';
+    d.innerHTML = '<span class="lj-item-nome">' + nome + '</span><span class="lj-item-seta">›</span>';
+    d.addEventListener('click', cb);
+    return d;
+  }
+
+  document.getElementById('btn-entrar-loja').addEventListener('click', function() {
+    document.getElementById('loja-entrada').style.display = 'none';
+    document.getElementById('loja-conteudo').style.display = 'block';
+  });
+
+  document.getElementById('lj-btn-mondriau').addEventListener('click', function() {
+    R = 'mondriau';
+    esc();
+    document.getElementById('lj-n2').style.display = 'block';
+    document.getElementById('lj-n2-titulo').textContent = '🏙 Mondriau';
+    var lista = document.getElementById('lj-n2-lista');
+    lista.innerHTML = '';
+    Object.keys(dados[R].cidades).forEach(function(cid) {
+      var c = dados[R].cidades[cid];
+      lista.appendChild(criarItem('🏰 ' + c.nome, function() {
+        C = cid;
+        esc();
+        document.getElementById('lj-n3').style.display = 'block';
+        document.getElementById('lj-n3-titulo').textContent = '🏰 ' + c.nome;
+        var l2 = document.getElementById('lj-n3-lista');
+        l2.innerHTML = '';
+        c.estabs.forEach(function(e) {
+          l2.appendChild(criarItem(e.nome, function() {
+            esc();
+            document.getElementById('lj-n4').style.display = 'block';
+            document.querySelectorAll('#lj-n4 > div[id^="lj-estab-"]').forEach(function(el) { el.style.display = 'none'; });
+            document.getElementById('lj-estab-' + e.id).style.display = 'block';
+            bc([dados[R].nome, c.nome, e.nome]);
+          }));
+        });
+        bc([dados[R].nome, c.nome]);
+      }));
+    });
+    bc([dados[R].nome]);
+  });
+
+  document.getElementById('lj-voltar-2').addEventListener('click', function() {
+    esc(); document.getElementById('lj-n1').style.display = 'block'; bc([]);
+  });
+  document.getElementById('lj-voltar-3').addEventListener('click', function() {
+    esc();
+    document.getElementById('lj-n2').style.display = 'block';
+    bc([dados[R].nome]);
+  });
+  document.getElementById('lj-voltar-4').addEventListener('click', function() {
+    esc();
+    document.getElementById('lj-n3').style.display = 'block';
+    var c = dados[R].cidades[C];
+    bc([dados[R].nome, c.nome]);
+  });
+})();
 </script>
 
-<!-- PLAYER -->
+
+
 <section class="section-ph" id="player">
   <style>
 .ficha-wrapper { width:100%; }
@@ -937,6 +948,8 @@ function abrirPagina(nome, btn) {
 .btn-ficha:hover { background:rgba(201,162,39,0.28); }
 .btn-limpar { color:#e08080; border-color:rgba(139,26,26,0.4); background:rgba(139,26,26,0.1); }
 .btn-limpar:hover { background:rgba(139,26,26,0.2); }
+.btn-fechar { color:#a0a0b0; border-color:rgba(100,100,120,0.4); background:rgba(100,100,120,0.1); }
+.btn-fechar:hover { background:rgba(100,100,120,0.22); }
 </style>
 
   <div id="player-locked">
@@ -953,8 +966,9 @@ function abrirPagina(nome, btn) {
   <!-- FICHA JOGADOR 1 -->
   <div id="ficha-jogador1" style="display:none;max-width:900px;width:100%;text-align:left;">
     <div class="badge badge-soon" style="display:block;text-align:center;margin-bottom:1.5rem;">Jogador 1</div>
-    
+
 <div class="ficha-section">
+
   <div class="ficha-section-title">📜 Informações do Personagem</div>
   <div class="ficha-row">
     <div class="ficha-field wide"><label>Nome do Personagem</label><input type="text" id="j1-nome" placeholder="Nome do aventureiro..."></div>
@@ -969,6 +983,23 @@ function abrirPagina(nome, btn) {
     <div class="ficha-field"><label>Cabelo</label><input type="text" id="j1-cabelo" placeholder="—"></div>
     <div class="ficha-field"><label>Pele</label><input type="text" id="j1-pele" placeholder="—"></div>
     <div class="ficha-field"><label>Altura</label><input type="text" id="j1-altura" placeholder="—"></div>
+  </div>
+</div>
+
+<div class="ficha-section">
+  <div class="ficha-section-title">📚 Proficiências & Idiomas</div>
+  <div class="ficha-row">
+    <div class="ficha-field full"><label>Proficiências</label><textarea id="j1-proficiencias" placeholder="Armaduras leves, espadas longas..."></textarea></div>
+  </div>
+  <div class="ficha-row">
+    <div class="ficha-field full"><label>Idiomas</label><textarea id="j1-idiomas" placeholder="Comum, Élfico..."></textarea></div>
+  </div>
+</div>
+
+<div class="ficha-section">
+  <div class="ficha-section-title">✨ Talentos & Habilidades Especiais</div>
+  <div class="ficha-row">
+    <div class="ficha-field full"><textarea id="j1-talentos" placeholder="Descreva seus talentos..." style="min-height:100px;"></textarea></div>
   </div>
 </div>
 
@@ -1013,37 +1044,37 @@ function abrirPagina(nome, btn) {
   <div class="atributos-grid">
     <div class="atributo-box">
       <label>Força</label>
-      <input type="text" class="valor" id="j1-for" placeholder="10">
+      <input type="text" class="valor" id="j1-for" placeholder="8">
       <span class="mod-label">Modificador</span>
       <input type="text" class="mod" id="j1-formod" placeholder="+0">
     </div>
     <div class="atributo-box">
       <label>Destreza</label>
-      <input type="text" class="valor" id="j1-des" placeholder="10">
+      <input type="text" class="valor" id="j1-des" placeholder="8">
       <span class="mod-label">Modificador</span>
       <input type="text" class="mod" id="j1-desmod" placeholder="+0">
     </div>
     <div class="atributo-box">
       <label>Constituição</label>
-      <input type="text" class="valor" id="j1-con" placeholder="10">
+      <input type="text" class="valor" id="j1-con" placeholder="8">
       <span class="mod-label">Modificador</span>
       <input type="text" class="mod" id="j1-conmod" placeholder="+0">
     </div>
     <div class="atributo-box">
       <label>Inteligência</label>
-      <input type="text" class="valor" id="j1-int" placeholder="10">
+      <input type="text" class="valor" id="j1-int" placeholder="8">
       <span class="mod-label">Modificador</span>
       <input type="text" class="mod" id="j1-intmod" placeholder="+0">
     </div>
     <div class="atributo-box">
       <label>Sabedoria</label>
-      <input type="text" class="valor" id="j1-sab" placeholder="10">
+      <input type="text" class="valor" id="j1-sab" placeholder="8">
       <span class="mod-label">Modificador</span>
       <input type="text" class="mod" id="j1-sabmod" placeholder="+0">
     </div>
     <div class="atributo-box">
       <label>Carisma</label>
-      <input type="text" class="valor" id="j1-car" placeholder="10">
+      <input type="text" class="valor" id="j1-car" placeholder="8">
       <span class="mod-label">Modificador</span>
       <input type="text" class="mod" id="j1-carmod" placeholder="+0">
     </div>
@@ -1200,23 +1231,6 @@ function abrirPagina(nome, btn) {
   </div>
   <div class="ficha-row" style="margin-top:1rem;">
     <div class="ficha-field"><label>Percepção Passiva (SAB)</label><input type="text" id="j1-percpassiva" class="num" placeholder="10"></div>
-  </div>
-</div>
-
-<div class="ficha-section">
-  <div class="ficha-section-title">📚 Proficiências & Idiomas</div>
-  <div class="ficha-row">
-    <div class="ficha-field full"><label>Proficiências</label><textarea id="j1-proficiencias" placeholder="Armaduras leves, espadas longas..."></textarea></div>
-  </div>
-  <div class="ficha-row">
-    <div class="ficha-field full"><label>Idiomas</label><textarea id="j1-idiomas" placeholder="Comum, Élfico..."></textarea></div>
-  </div>
-</div>
-
-<div class="ficha-section">
-  <div class="ficha-section-title">✨ Talentos & Habilidades Especiais</div>
-  <div class="ficha-row">
-    <div class="ficha-field full"><textarea id="j1-talentos" placeholder="Descreva seus talentos..." style="min-height:100px;"></textarea></div>
   </div>
 </div>
 
@@ -1582,17 +1596,20 @@ function abrirPagina(nome, btn) {
         <input type="checkbox" id="j1-rit9-3"><label>Ritual</label>
         <input type="checkbox" id="j1-conc9-3"><label>Conc.</label>
       </div></div></div></div>
+
     <div style="text-align:center;margin-top:1.5rem;">
       <button class="btn-ficha" onclick="salvarDados('j1')">💾 Salvar Ficha</button>
       <button class="btn-ficha btn-limpar" onclick="limparDados('j1')" style="margin-left:1rem;">🗑 Limpar</button>
+      <button class="btn-ficha btn-fechar" onclick="fecharFicha('ficha-jogador1')" style="margin-left:1rem;">✕ Fechar Ficha</button>
     </div>
   </div>
 
-  <!-- FICHA JOGADOR 2 -->
+<!-- FICHA JOGADOR 2 -->
   <div id="ficha-jogador2" style="display:none;max-width:900px;width:100%;text-align:left;">
     <div class="badge badge-soon" style="display:block;text-align:center;margin-bottom:1.5rem;">Jogador 2</div>
-    
+
 <div class="ficha-section">
+
   <div class="ficha-section-title">📜 Informações do Personagem</div>
   <div class="ficha-row">
     <div class="ficha-field wide"><label>Nome do Personagem</label><input type="text" id="j2-nome" placeholder="Nome do aventureiro..."></div>
@@ -1607,6 +1624,23 @@ function abrirPagina(nome, btn) {
     <div class="ficha-field"><label>Cabelo</label><input type="text" id="j2-cabelo" placeholder="—"></div>
     <div class="ficha-field"><label>Pele</label><input type="text" id="j2-pele" placeholder="—"></div>
     <div class="ficha-field"><label>Altura</label><input type="text" id="j2-altura" placeholder="—"></div>
+  </div>
+</div>
+
+<div class="ficha-section">
+  <div class="ficha-section-title">📚 Proficiências & Idiomas</div>
+  <div class="ficha-row">
+    <div class="ficha-field full"><label>Proficiências</label><textarea id="j2-proficiencias" placeholder="Armaduras leves, espadas longas..."></textarea></div>
+  </div>
+  <div class="ficha-row">
+    <div class="ficha-field full"><label>Idiomas</label><textarea id="j2-idiomas" placeholder="Comum, Élfico..."></textarea></div>
+  </div>
+</div>
+
+<div class="ficha-section">
+  <div class="ficha-section-title">✨ Talentos & Habilidades Especiais</div>
+  <div class="ficha-row">
+    <div class="ficha-field full"><textarea id="j2-talentos" placeholder="Descreva seus talentos..." style="min-height:100px;"></textarea></div>
   </div>
 </div>
 
@@ -1651,37 +1685,37 @@ function abrirPagina(nome, btn) {
   <div class="atributos-grid">
     <div class="atributo-box">
       <label>Força</label>
-      <input type="text" class="valor" id="j2-for" placeholder="10">
+      <input type="text" class="valor" id="j2-for" placeholder="8">
       <span class="mod-label">Modificador</span>
       <input type="text" class="mod" id="j2-formod" placeholder="+0">
     </div>
     <div class="atributo-box">
       <label>Destreza</label>
-      <input type="text" class="valor" id="j2-des" placeholder="10">
+      <input type="text" class="valor" id="j2-des" placeholder="8">
       <span class="mod-label">Modificador</span>
       <input type="text" class="mod" id="j2-desmod" placeholder="+0">
     </div>
     <div class="atributo-box">
       <label>Constituição</label>
-      <input type="text" class="valor" id="j2-con" placeholder="10">
+      <input type="text" class="valor" id="j2-con" placeholder="8">
       <span class="mod-label">Modificador</span>
       <input type="text" class="mod" id="j2-conmod" placeholder="+0">
     </div>
     <div class="atributo-box">
       <label>Inteligência</label>
-      <input type="text" class="valor" id="j2-int" placeholder="10">
+      <input type="text" class="valor" id="j2-int" placeholder="8">
       <span class="mod-label">Modificador</span>
       <input type="text" class="mod" id="j2-intmod" placeholder="+0">
     </div>
     <div class="atributo-box">
       <label>Sabedoria</label>
-      <input type="text" class="valor" id="j2-sab" placeholder="10">
+      <input type="text" class="valor" id="j2-sab" placeholder="8">
       <span class="mod-label">Modificador</span>
       <input type="text" class="mod" id="j2-sabmod" placeholder="+0">
     </div>
     <div class="atributo-box">
       <label>Carisma</label>
-      <input type="text" class="valor" id="j2-car" placeholder="10">
+      <input type="text" class="valor" id="j2-car" placeholder="8">
       <span class="mod-label">Modificador</span>
       <input type="text" class="mod" id="j2-carmod" placeholder="+0">
     </div>
@@ -1838,23 +1872,6 @@ function abrirPagina(nome, btn) {
   </div>
   <div class="ficha-row" style="margin-top:1rem;">
     <div class="ficha-field"><label>Percepção Passiva (SAB)</label><input type="text" id="j2-percpassiva" class="num" placeholder="10"></div>
-  </div>
-</div>
-
-<div class="ficha-section">
-  <div class="ficha-section-title">📚 Proficiências & Idiomas</div>
-  <div class="ficha-row">
-    <div class="ficha-field full"><label>Proficiências</label><textarea id="j2-proficiencias" placeholder="Armaduras leves, espadas longas..."></textarea></div>
-  </div>
-  <div class="ficha-row">
-    <div class="ficha-field full"><label>Idiomas</label><textarea id="j2-idiomas" placeholder="Comum, Élfico..."></textarea></div>
-  </div>
-</div>
-
-<div class="ficha-section">
-  <div class="ficha-section-title">✨ Talentos & Habilidades Especiais</div>
-  <div class="ficha-row">
-    <div class="ficha-field full"><textarea id="j2-talentos" placeholder="Descreva seus talentos..." style="min-height:100px;"></textarea></div>
   </div>
 </div>
 
@@ -2220,13 +2237,15 @@ function abrirPagina(nome, btn) {
         <input type="checkbox" id="j2-rit9-3"><label>Ritual</label>
         <input type="checkbox" id="j2-conc9-3"><label>Conc.</label>
       </div></div></div></div>
+
     <div style="text-align:center;margin-top:1.5rem;">
       <button class="btn-ficha" onclick="salvarDados('j2')">💾 Salvar Ficha</button>
       <button class="btn-ficha btn-limpar" onclick="limparDados('j2')" style="margin-left:1rem;">🗑 Limpar</button>
+      <button class="btn-ficha btn-fechar" onclick="fecharFicha('ficha-jogador2')" style="margin-left:1rem;">✕ Fechar Ficha</button>
     </div>
   </div>
 
-  <!-- VISÃO DO MESTRE -->
+    <!-- VISÃO DO MESTRE -->
   <div id="ficha-mestre-player" style="display:none;max-width:760px;width:100%;text-align:left;">
     <div class="badge badge-restricted" style="display:block;text-align:center;margin-bottom:1.5rem;">Visão do Mestre</div>
     <div class="parchment-card">
@@ -2254,8 +2273,8 @@ function verificarPlayer(){
       document.getElementById('player-locked').style.display='none';
       _e.style.opacity='0';
       if(_r==='m') document.getElementById('ficha-mestre-player').style.display='block';
-      else if(_r==='p1') document.getElementById('ficha-jogador1').style.display='block';
-      else if(_r==='p2') document.getElementById('ficha-jogador2').style.display='block';
+      else if(_r==='p1'){ document.getElementById('ficha-jogador1').style.display='block'; carregarDados('j1'); }
+      else if(_r==='p2'){ document.getElementById('ficha-jogador2').style.display='block'; carregarDados('j2'); }
     } else {
       _e.style.opacity='1';
       document.getElementById('player-input').value='';
@@ -2265,22 +2284,50 @@ function verificarPlayer(){
 
 // Fichas
 var _fichaData = {};
+var _LS_KEY = 'unterwelt_fichas';
+
+function _persistir(){
+  try { localStorage.setItem(_LS_KEY, JSON.stringify(_fichaData)); } catch(e){}
+}
+function _restaurar(){
+  try {
+    var raw = localStorage.getItem(_LS_KEY);
+    if(raw) _fichaData = JSON.parse(raw);
+  } catch(e){ _fichaData = {}; }
+}
+function carregarDados(p){
+  _restaurar();
+  var campos = document.querySelectorAll('[id^="'+p+'-"]');
+  campos.forEach(function(el){
+    if(_fichaData[el.id] !== undefined){
+      if(el.type==='checkbox') el.checked = _fichaData[el.id];
+      else el.value = _fichaData[el.id];
+    }
+  });
+}
 function salvarDados(p){
   var campos = document.querySelectorAll('[id^="'+p+'-"]');
   campos.forEach(function(el){
     if(el.type==='checkbox') _fichaData[el.id]=el.checked;
     else _fichaData[el.id]=el.value;
   });
-  alert('Ficha salva! (válido até fechar a página) ⚔');
+  _persistir();
+  var btn = event && event.target;
+  if(btn){ var orig=btn.textContent; btn.textContent='✓ Salvo!'; setTimeout(function(){ btn.textContent=orig; },1500); }
 }
 function limparDados(p){
-  if(!confirm('Apagar todos os dados?')) return;
+  if(!confirm('Apagar todos os dados de '+p+'?')) return;
   var campos = document.querySelectorAll('[id^="'+p+'-"]');
   campos.forEach(function(el){
     if(el.type==='checkbox') el.checked=false;
     else el.value='';
   });
   Object.keys(_fichaData).forEach(function(k){ if(k.startsWith(p+'-')) delete _fichaData[k]; });
+  _persistir();
+}
+function fecharFicha(id){
+  document.getElementById(id).style.display='none';
+  document.getElementById('player-locked').style.display='block';
 }
 </script>
 <!-- MESTRE -->
@@ -2390,13 +2437,18 @@ function limparDados(p){
           <div style="font-family:'Crimson Text',serif;font-size:0.95rem;color:var(--ink-light);line-height:1.7;margin-bottom:1rem;">
             Planície aberta sem defesas naturais — compensada por <strong>grandes muralhas com canhões a vapor</strong> (tecnologia de Aldora), visíveis por toda a cidade. Soldados operam de dentro das paredes.<br>
             <strong>Guardas externos:</strong> armadura amarelo escuro com laranja escuro, rosto coberto com fresta para visão. Presentes em todos os bairros igualmente.<br><br>
-            <strong>Hierarquia:</strong> estrutura militar — Comandante Geral no topo, Capitães de Distrito abaixo, guardas comuns na base.<br>
-            <strong>Comandante Geral: Vlafck Zovk</strong> — Grung. Honesto, faz o que for necessário. Responde formalmente a Yulif Shesperanato mas equilibra pressão das 5 famílias. Sabe da corrupção interna e tenta combater — mas o sistema é maior que ele.<br>
-            <strong>Capitães:</strong> tentam fazer o trabalho direito.<br>
+            <strong>Hierarquia:</strong> estrutura militar com Comandante Geral no topo controlando tanto a guarda externa quanto a de Aertenus — ainda a definir nome e raça.<br><br>
+            <strong>Guarda Externa (fora da zona nobre):</strong><br>
+            <strong>Vlafck Zovk</strong> — Grung. Comandante da Guarda Externa, responde ao Comandante Geral. Honesto, faz o que for necessário. Sabe da corrupção interna e tenta combater — mas o sistema é maior que ele.<br>
+            → Capitães de Distrito → Sargentos → Soldados comuns<br><br>
+            <strong>Guarda de Aertenus (zona nobre):</strong><br>
+            Comandante interno — a definir, também responde ao Comandante Geral. Recruta apenas filhos de nobres ou indicados pelo alto escalão.<br>
+            → Capitães → Sargentos → Soldados de elite<br><br>
+            <strong>Visual distintivo:</strong> armadura vermelha com detalhes amarelo claro, capacete fechado com capuz/manto. Escudo <em>amarrado no pulso</em> — não segurado, fixado no antebraço esquerdo, deixando ambas as mãos livres para combate. Transmite que esses soldados foram treinados diferente — o escudo é parte do corpo, não uma ferramenta.<br><br>
             <strong>Guardas comuns:</strong> os mais corruptos — nas zonas pobres cobram propina, fecham os olhos para facções criminosas e tratam goblins e parentescos com preconceito aberto.
           </div>
 
-          <div style="font-family:'Cinzel',serif;font-size:0.7rem;letter-spacing:0.2em;color:rgba(201,162,39,0.6);text-transform:uppercase;margin-bottom:0.5rem;">🍺 Porco Cantando</div>
+          <div style="font-family:'Cinzel',serif;font-size:0.7rem;letter-spacing:0.2em;color:rgba(201,162,39,0.6);text-transform:uppercase;margin-bottom:0.5rem;">🍺 Porco Cantante</div>
           <div style="font-family:'Crimson Text',serif;font-size:0.95rem;color:var(--ink-light);line-height:1.7;margin-bottom:1rem;">
             Bar na zona pobre. Tamanho médio, hospedagem no andar de cima, quase sempre vazio.<br>
             <strong>Donos:</strong> um elfo (a ser descrito) e um anão que ajudou financeiramente e agora passa o tempo bêbado no próprio bar.
@@ -2554,15 +2606,29 @@ function salvarMundo(){
 </script>
 
 <!-- ATUALIZAÇÃO -->
-<section class="section-ph" id="atualizacao">
-  <div class="badge badge-soon">Em breve</div>
-  <h2>Atualização</h2>
-  <p>Novidades, mudanças de regras e resumos das sessões anteriores...</p>
+<section class="section-ph" id="atualizacao" style="min-height:auto; padding:4rem 2rem;">
+  <h2 style="opacity:1; margin-bottom:0.5rem;">Atualização</h2>
+  <p style="opacity:0.6; margin-bottom:2.5rem;">Novidades, mudanças de regras e resumos das sessões anteriores.</p>
+
+  <div style="max-width:640px; margin:0 auto; display:flex; flex-direction:column; gap:1.2rem;">
+
+    <div style="border-left:2px solid rgba(201,162,39,0.5); padding:0.8rem 1.2rem; background:rgba(201,162,39,0.05); border-radius:0 2px 2px 0;">
+      <div style="font-family:'Cinzel',serif; font-size:0.65rem; letter-spacing:0.2em; text-transform:uppercase; color:rgba(201,162,39,0.6); margin-bottom:0.5rem;">07/03/2026</div>
+      <div style="font-family:'Cinzel',serif; font-size:0.85rem; color:var(--parchment); margin-bottom:0.5rem; letter-spacing:0.05em;">Loja & Fichas dos Jogadores</div>
+      <ul style="font-family:'Crimson Text',serif; font-size:1rem; color:rgba(242,232,213,0.75); line-height:1.7; margin:0; padding-left:1.2rem;">
+        <li>Loja reestruturada com navegação por Regiões → Cidades → Estabelecimentos e layout de pergaminho</li>
+        <li>Adicionados estabelecimentos em Mauern: Porco Cantante, Sonho dos Campos, Ferreiro Cly e Geral do Geraldo</li>
+        <li>Fichas dos jogadores: atributos agora iniciam com valor base 8 (sistema de distribuição de pontos)</li>
+        <li>Fichas dos jogadores: Proficiências & Idiomas e Talentos & Habilidades movidos para após História & Características</li>
+      </ul>
+    </div>
+
+  </div>
 </section>
 
 <!-- FOOTER -->
 <footer>
-  ✦ &nbsp; Unterwelt — Crônicas de Mauern &nbsp;·&nbsp; Versão Alpha &nbsp;·&nbsp; Todos os direitos reservados &nbsp; ✦
+  ✦ &nbsp; Unterwelt — A Lenda de Yunigard &nbsp;·&nbsp; Versão Alpha &nbsp;·&nbsp; Todos os direitos reservados &nbsp; ✦
 </footer>
 
 <script>

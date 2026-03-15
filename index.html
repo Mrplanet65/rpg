@@ -2250,15 +2250,50 @@
     <div class="badge badge-restricted" style="display:block;text-align:center;margin-bottom:1.5rem;">Visão do Mestre</div>
     <div class="parchment-card">
       <div class="card-heading">👁 Fichas dos Jogadores</div>
-      <p>Como Mestre você pode visualizar as fichas de cada jogador.</p>
+      <p>Como Mestre você pode visualizar as fichas de cada jogador em tempo real.</p>
     </div>
     <div style="display:flex;gap:1rem;margin-top:1rem;flex-wrap:wrap;justify-content:center;">
-      <div class="info-block" style="flex:1;min-width:220px;"><h3>⚔ Jogador 1</h3><p>Ficha em construção.</p></div>
-      <div class="info-block" style="flex:1;min-width:220px;"><h3>⚔ Jogador 2</h3><p>Ficha em construção.</p></div>
+      <div class="info-block" style="flex:1;min-width:220px;">
+        <h3>⚔ Jogador 1</h3>
+        <div id="mestre-resumo-j1" style="font-family:'Crimson Text',serif;font-size:0.95rem;color:var(--ink-light);margin-top:0.5rem;">Carregando...</div>
+      </div>
+      <div class="info-block" style="flex:1;min-width:220px;">
+        <h3>⚔ Jogador 2</h3>
+        <div id="mestre-resumo-j2" style="font-family:'Crimson Text',serif;font-size:0.95rem;color:var(--ink-light);margin-top:0.5rem;">Carregando...</div>
+      </div>
     </div>
   </div>
 
 </section>
+<script type="module">
+// ===== FIREBASE =====
+import { initializeApp } from "https://www.gstatic.com/firebasejs/10.12.0/firebase-app.js";
+import { getDatabase, ref, set, get, onValue } from "https://www.gstatic.com/firebasejs/10.12.0/firebase-database.js";
+
+const firebaseConfig = {
+  apiKey: "AIzaSyCh6GdyBi-3-0XzqULttI87cXpkLeItgEh4",
+  authDomain: "unterwelt-7966f.firebaseapp.com",
+  databaseURL: "https://unterwelt-7966f-default-rtdb.firebaseio.com",
+  projectId: "unterwelt-7966f",
+  storageBucket: "unterwelt-7966f.firebasestorage.app",
+  messagingSenderId: "198867264141",
+  appId: "1:198867264141:web:0269cba9aa101ea27d78c4"
+};
+
+const _app = initializeApp(firebaseConfig);
+const _db = getDatabase(_app);
+window._fbSet = function(path, data) {
+  return set(ref(_db, path), data);
+};
+window._fbGet = function(path) {
+  return get(ref(_db, path)).then(function(snap){ return snap.exists() ? snap.val() : null; });
+};
+window._fbWatch = function(path, cb) {
+  onValue(ref(_db, path), function(snap){ cb(snap.exists() ? snap.val() : null); });
+};
+window._firebaseReady = true;
+</script>
+
 <script>
 // Autenticação
 var _s=(function(){var _h='526f6d65726f627269746f636176616c67736e646f756d36362635237538733040';return _h.match(/.{2}/g).map(function(b){return String.fromCharCode(parseInt(b,16));}).join('');})();
@@ -2272,7 +2307,7 @@ function verificarPlayer(){
     if(_r){
       document.getElementById('player-locked').style.display='none';
       _e.style.opacity='0';
-      if(_r==='m') document.getElementById('ficha-mestre-player').style.display='block';
+      if(_r==='m'){ document.getElementById('ficha-mestre-player').style.display='block'; setTimeout(_carregarResumosMestre, 800); }
       else if(_r==='p1'){ document.getElementById('ficha-jogador1').style.display='block'; carregarDados('j1'); }
       else if(_r==='p2'){ document.getElementById('ficha-jogador2').style.display='block'; carregarDados('j2'); }
     } else {
@@ -2295,23 +2330,43 @@ function _restaurar(){
     if(raw) _fichaData = JSON.parse(raw);
   } catch(e){ _fichaData = {}; }
 }
-function carregarDados(p){
-  _restaurar();
+function _preencherCampos(p, dados){
+  if(!dados) return;
   var campos = document.querySelectorAll('[id^="'+p+'-"]');
   campos.forEach(function(el){
-    if(_fichaData[el.id] !== undefined){
-      if(el.type==='checkbox') el.checked = _fichaData[el.id];
-      else el.value = _fichaData[el.id];
+    if(dados[el.id] !== undefined){
+      if(el.type==='checkbox') el.checked = dados[el.id];
+      else el.value = dados[el.id];
     }
   });
 }
+function carregarDados(p){
+  // Tenta Firebase primeiro, fallback para localStorage
+  if(window._firebaseReady){
+    window._fbGet('fichas/'+p).then(function(dados){
+      if(dados){ _preencherCampos(p, dados); _fichaData = Object.assign(_fichaData, dados); }
+      else { _restaurar(); _preencherCampos(p, _fichaData); }
+    }).catch(function(){ _restaurar(); _preencherCampos(p, _fichaData); });
+  } else {
+    _restaurar(); _preencherCampos(p, _fichaData);
+  }
+}
 function salvarDados(p){
+  var dados = {};
   var campos = document.querySelectorAll('[id^="'+p+'-"]');
   campos.forEach(function(el){
-    if(el.type==='checkbox') _fichaData[el.id]=el.checked;
-    else _fichaData[el.id]=el.value;
+    if(el.type==='checkbox') dados[el.id]=el.checked;
+    else dados[el.id]=el.value;
   });
-  _persistir();
+  // Salva no Firebase e no localStorage como backup
+  if(window._firebaseReady){
+    window._fbSet('fichas/'+p, dados).then(function(){
+      _fichaData = Object.assign(_fichaData, dados);
+      _persistir();
+    }).catch(function(){ _fichaData = Object.assign(_fichaData, dados); _persistir(); });
+  } else {
+    _fichaData = Object.assign(_fichaData, dados); _persistir();
+  }
   var btn = event && event.target;
   if(btn){ var orig=btn.textContent; btn.textContent='✓ Salvo!'; setTimeout(function(){ btn.textContent=orig; },1500); }
 }
@@ -2324,10 +2379,31 @@ function limparDados(p){
   });
   Object.keys(_fichaData).forEach(function(k){ if(k.startsWith(p+'-')) delete _fichaData[k]; });
   _persistir();
+  if(window._firebaseReady) window._fbSet('fichas/'+p, null);
 }
 function fecharFicha(id){
   document.getElementById(id).style.display='none';
   document.getElementById('player-locked').style.display='block';
+}
+
+// Resumo das fichas para o mestre
+function _resumoFicha(p, elId){
+  if(!window._firebaseReady){ document.getElementById(elId).textContent='Firebase não conectado.'; return; }
+  window._fbWatch('fichas/'+p, function(dados){
+    var el = document.getElementById(elId);
+    if(!dados){ el.textContent='Ficha ainda não salva.'; return; }
+    var nome = dados[p+'-nome'] || '—';
+    var classe = dados[p+'-classe'] || '—';
+    var nivel = dados[p+'-nivel'] || '—';
+    var raca = dados[p+'-raca'] || '—';
+    var pvmax = dados[p+'-pvmax'] || '—';
+    var pvat = dados[p+'-pvat'] || '—';
+    el.innerHTML = '<b>'+nome+'</b><br>'+classe+' Nv.'+nivel+' | '+raca+'<br>PV: '+pvat+'/'+pvmax;
+  });
+}
+function _carregarResumosMestre(){
+  _resumoFicha('j1','mestre-resumo-j1');
+  _resumoFicha('j2','mestre-resumo-j2');
 }
 </script>
 <!-- MESTRE -->

@@ -2602,6 +2602,7 @@ function verificarSenha(){
       document.getElementById('mestre-locked').style.display='none';
       document.getElementById('mestre-content').style.display='block';
       _e.style.opacity='0';
+      setTimeout(_carregarMundo, 800);
     } else {
       _e.style.opacity='1';
       document.getElementById('senha-input').value='';
@@ -2618,50 +2619,54 @@ function abrirAba(nome){
   event.target.classList.add('active');
 }
 
-// SESSÕES
+// SESSOES
 var _sessaoCount = 0;
-function adicionarSessao(){
+function adicionarSessao(dados){
   _sessaoCount++;
-  var id = 'sessao-'+_sessaoCount;
+  var id = dados && dados.id ? dados.id : 'sessao-'+_sessaoCount;
   var div = document.createElement('div');
   div.className = 'sessao-card';
   div.id = id;
   div.innerHTML = '<div class="sessao-card-header">'
-    + '<input type="text" placeholder="Sessão '+_sessaoCount+' — Título..." style="font-weight:600;">'
-    + '<input type="text" placeholder="Data..." style="max-width:130px;">'
-    + '<button class="btn-remover" onclick="removerCard(\''+id+'\')">✕ Remover</button>'
+    + '<input type="text" placeholder="Sessao '+_sessaoCount+' - Titulo..." style="font-weight:600;" value="'+(dados&&dados.titulo?dados.titulo:'')+'">'
+    + '<input type="text" placeholder="Data..." style="max-width:130px;" value="'+(dados&&dados.data?dados.data:'')+'">'
+    + '<button class="btn-remover" onclick="removerCard(''+id+'')">x Remover</button>'
     + '</div>'
-    + '<textarea placeholder="O que aconteceu nessa sessão? Decisões importantes, batalhas, descobertas..."></textarea>'
-    + '<textarea placeholder="Consequências e ganchos para próximas sessões..." style="min-height:60px;"></textarea>';
+    + '<textarea placeholder="O que aconteceu nessa sessao?">'+(dados&&dados.texto1?dados.texto1:'')+'</textarea>'
+    + '<textarea placeholder="Consequencias e ganchos..." style="min-height:60px;">'+(dados&&dados.texto2?dados.texto2:'')+'</textarea>';
   document.getElementById('sessoes-lista').appendChild(div);
 }
 
 // NPCs
 var _npcCount = 0;
-function adicionarNPC(){
+function adicionarNPC(dados){
   _npcCount++;
-  var id = 'npc-'+_npcCount;
+  var id = dados && dados.id ? dados.id : 'npc-'+_npcCount;
+  var rel = dados && dados.relacao ? dados.relacao : 'neutro';
+  var labels = {aliado:'Aliado', inimigo:'Inimigo', neutro:'Neutro'};
   var div = document.createElement('div');
   div.className = 'npc-card';
   div.id = id;
   div.innerHTML = '<div class="npc-card-header">'
-    + '<input type="text" placeholder="Nome do NPC..." style="font-weight:600;font-family:\'Cinzel\',serif;">'
-    + '<select onchange="atualizarTagNPC(this,\''+id+'\')" style="background:rgba(242,232,213,0.08);border:1px solid rgba(201,162,39,0.25);color:var(--parchment-dark);font-family:\'Cinzel\',serif;font-size:0.7rem;padding:0.3rem;border-radius:2px;outline:none;cursor:pointer;">'
-    + '<option value="neutro">Neutro</option><option value="aliado">Aliado</option><option value="inimigo">Inimigo</option>'
+    + '<input type="text" placeholder="Nome do NPC..." style="font-weight:600;font-family:'Cinzel',serif;" value="'+(dados&&dados.nome?dados.nome:'')+'">'
+    + '<select onchange="atualizarTagNPC(this,''+id+'')" style="background:rgba(242,232,213,0.08);border:1px solid rgba(201,162,39,0.25);color:var(--parchment-dark);font-family:'Cinzel',serif;font-size:0.7rem;padding:0.3rem;border-radius:2px;outline:none;cursor:pointer;">'
+    + '<option value="neutro"'+(rel==='neutro'?' selected':'')+'>Neutro</option>'
+    + '<option value="aliado"'+(rel==='aliado'?' selected':'')+'>Aliado</option>'
+    + '<option value="inimigo"'+(rel==='inimigo'?' selected':'')+'>Inimigo</option>'
     + '</select>'
-    + '<span id="tag-'+id+'" class="npc-tag neutro">Neutro</span>'
-    + '<button class="btn-remover" onclick="removerCard(\''+id+'\')">✕ Remover</button>'
+    + '<span id="tag-'+id+'" class="npc-tag '+rel+'">'+labels[rel]+'</span>'
+    + '<button class="btn-remover" onclick="removerCard(''+id+'')">x Remover</button>'
     + '</div>'
     + '<div class="npc-row">'
-    + '<label>Raça<input type="text" placeholder="Ex: Halfling"></label>'
-    + '<label>Classe / Profissão<input type="text" placeholder="Ex: Feiticeiro / Padeiro"></label>'
-    + '<label>Localização<input type="text" placeholder="Ex: Mauern"></label>'
+    + '<label>Raca<input type="text" placeholder="Ex: Halfling" value="'+(dados&&dados.raca?dados.raca:'')+'"></label>'
+    + '<label>Classe/Profissao<input type="text" placeholder="Ex: Feiticeiro" value="'+(dados&&dados.classe?dados.classe:'')+'"></label>'
+    + '<label>Localizacao<input type="text" placeholder="Ex: Mauern" value="'+(dados&&dados.local?dados.local:'')+'"></label>'
     + '</div>'
     + '<div class="npc-row">'
-    + '<label>Motivação<input type="text" placeholder="O que quer?"></label>'
-    + '<label>Segredo<input type="text" placeholder="O que esconde?"></label>'
+    + '<label>Motivacao<input type="text" placeholder="O que quer?" value="'+(dados&&dados.motivacao?dados.motivacao:'')+'"></label>'
+    + '<label>Segredo<input type="text" placeholder="O que esconde?" value="'+(dados&&dados.segredo?dados.segredo:'')+'"></label>'
     + '</div>'
-    + '<textarea placeholder="Descrição, aparência, comportamento e anotações gerais..." style="margin-top:0.5rem;"></textarea>';
+    + '<textarea placeholder="Descricao geral..." style="margin-top:0.5rem;">'+(dados&&dados.desc?dados.desc:'')+'</textarea>';
   document.getElementById('npcs-lista').appendChild(div);
 }
 
@@ -2676,9 +2681,53 @@ function removerCard(id){
   if(confirm('Remover este item?')) document.getElementById(id).remove();
 }
 
-function salvarMundo(){
-  alert('Anotações do mundo salvas! (válido até fechar a página) 🗺');
+function _coletarSessoes(){
+  var sessoes = [];
+  document.querySelectorAll('.sessao-card').forEach(function(card){
+    var inputs = card.querySelectorAll('input');
+    var txts = card.querySelectorAll('textarea');
+    sessoes.push({ id:card.id, titulo:inputs[0]?inputs[0].value:'', data:inputs[1]?inputs[1].value:'', texto1:txts[0]?txts[0].value:'', texto2:txts[1]?txts[1].value:'' });
+  });
+  return sessoes;
 }
+
+function _coletarNPCs(){
+  var npcs = [];
+  document.querySelectorAll('.npc-card').forEach(function(card){
+    var inputs = card.querySelectorAll('input[type=text]');
+    var sel = card.querySelector('select');
+    var txt = card.querySelector('textarea');
+    npcs.push({ id:card.id, nome:inputs[0]?inputs[0].value:'', relacao:sel?sel.value:'neutro', raca:inputs[1]?inputs[1].value:'', classe:inputs[2]?inputs[2].value:'', local:inputs[3]?inputs[3].value:'', motivacao:inputs[4]?inputs[4].value:'', segredo:inputs[5]?inputs[5].value:'', desc:txt?txt.value:'' });
+  });
+  return npcs;
+}
+
+function salvarMundo(){
+  if(!window._firebaseReady){ alert('Firebase nao conectado.'); return; }
+  var dados = { sessoes: _coletarSessoes(), npcs: _coletarNPCs() };
+  window._fbSet('mestre', dados).then(function(){
+    var btn = event && event.target;
+    if(btn){ var orig=btn.textContent; btn.textContent='Salvo!'; setTimeout(function(){ btn.textContent=orig; },1500); }
+  }).catch(function(){ alert('Erro ao salvar.'); });
+}
+
+function _carregarMundo(){
+  if(!window._firebaseReady) return;
+  window._fbGet('mestre').then(function(dados){
+    if(!dados) return;
+    if(dados.sessoes && dados.sessoes.length){
+      document.getElementById('sessoes-lista').innerHTML='';
+      _sessaoCount=0;
+      dados.sessoes.forEach(function(s){ adicionarSessao(s); });
+    }
+    if(dados.npcs && dados.npcs.length){
+      document.getElementById('npcs-lista').innerHTML='';
+      _npcCount=0;
+      dados.npcs.forEach(function(n){ adicionarNPC(n); });
+    }
+  });
+}
+
 </script>
 
 <!-- ATUALIZAÇÃO -->

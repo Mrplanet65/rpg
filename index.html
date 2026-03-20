@@ -2265,11 +2265,10 @@
   </div>
 
 </section>
-<script type="module">
+<script src="https://www.gstatic.com/firebasejs/10.12.0/firebase-app-compat.js"></script>
+<script src="https://www.gstatic.com/firebasejs/10.12.0/firebase-database-compat.js"></script>
+<script>
 // ===== FIREBASE =====
-import { initializeApp } from "https://www.gstatic.com/firebasejs/10.12.0/firebase-app.js";
-import { getDatabase, ref, set, get, onValue } from "https://www.gstatic.com/firebasejs/10.12.0/firebase-database.js";
-
 const firebaseConfig = {
   apiKey: "AIzaSyCh6GdyBi-3-0XzqULttI87cXpkLeItgEh4",
   authDomain: "unterwelt-7966f.firebaseapp.com",
@@ -2279,17 +2278,16 @@ const firebaseConfig = {
   messagingSenderId: "198867264141",
   appId: "1:198867264141:web:0269cba9aa101ea27d78c4"
 };
-
-const _app = initializeApp(firebaseConfig);
-const _db = getDatabase(_app);
+firebase.initializeApp(firebaseConfig);
+var _dbRef = firebase.database();
 window._fbSet = function(path, data) {
-  return set(ref(_db, path), data);
+  return _dbRef.ref(path).set(data);
 };
 window._fbGet = function(path) {
-  return get(ref(_db, path)).then(function(snap){ return snap.exists() ? snap.val() : null; });
+  return _dbRef.ref(path).once('value').then(function(snap){ return snap.exists() ? snap.val() : null; });
 };
 window._fbWatch = function(path, cb) {
-  onValue(ref(_db, path), function(snap){ cb(snap.exists() ? snap.val() : null); });
+  _dbRef.ref(path).on('value', function(snap){ cb(snap.exists() ? snap.val() : null); });
 };
 window._firebaseReady = true;
 </script>

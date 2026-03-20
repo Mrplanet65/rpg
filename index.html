@@ -2627,13 +2627,17 @@ function adicionarSessao(dados){
   var div = document.createElement('div');
   div.className = 'sessao-card';
   div.id = id;
+  var titulo = dados && dados.titulo ? dados.titulo.replace(/"/g,'&quot;') : '';
+  var data   = dados && dados.data   ? dados.data.replace(/"/g,'&quot;')   : '';
+  var txt1   = dados && dados.texto1 ? dados.texto1 : '';
+  var txt2   = dados && dados.texto2 ? dados.texto2 : '';
   div.innerHTML = '<div class="sessao-card-header">'
-    + '<input type="text" placeholder="Sessao '+_sessaoCount+' - Titulo..." style="font-weight:600;" value="'+(dados&&dados.titulo?dados.titulo:'')+'">'
-    + '<input type="text" placeholder="Data..." style="max-width:130px;" value="'+(dados&&dados.data?dados.data:'')+'">'
-    + '<button class="btn-remover" onclick="removerCard(''+id+'')">x Remover</button>'
+    + '<input type="text" placeholder="Sessao '+_sessaoCount+' - Titulo..." style="font-weight:600;" value="'+titulo+'">'
+    + '<input type="text" placeholder="Data..." style="max-width:130px;" value="'+data+'">'
+    + '<button class="btn-remover" onclick="removerCard(\''+id+'\')">✕ Remover</button>'
     + '</div>'
-    + '<textarea placeholder="O que aconteceu nessa sessao?">'+(dados&&dados.texto1?dados.texto1:'')+'</textarea>'
-    + '<textarea placeholder="Consequencias e ganchos..." style="min-height:60px;">'+(dados&&dados.texto2?dados.texto2:'')+'</textarea>';
+    + '<textarea placeholder="O que aconteceu nessa sessao?">'+txt1+'</textarea>'
+    + '<textarea placeholder="Consequencias e ganchos..." style="min-height:60px;">'+txt2+'</textarea>';
   document.getElementById('sessoes-lista').appendChild(div);
 }
 
@@ -2641,32 +2645,39 @@ function adicionarSessao(dados){
 var _npcCount = 0;
 function adicionarNPC(dados){
   _npcCount++;
-  var id = dados && dados.id ? dados.id : 'npc-'+_npcCount;
-  var rel = dados && dados.relacao ? dados.relacao : 'neutro';
+  var id  = dados && dados.id      ? dados.id      : 'npc-'+_npcCount;
+  var rel = dados && dados.relacao ? dados.relacao  : 'neutro';
   var labels = {aliado:'Aliado', inimigo:'Inimigo', neutro:'Neutro'};
+  var nome = dados && dados.nome       ? dados.nome.replace(/"/g,'&quot;')       : '';
+  var raca = dados && dados.raca       ? dados.raca.replace(/"/g,'&quot;')       : '';
+  var cls  = dados && dados.classe     ? dados.classe.replace(/"/g,'&quot;')     : '';
+  var loc  = dados && dados.local      ? dados.local.replace(/"/g,'&quot;')      : '';
+  var mot  = dados && dados.motivacao  ? dados.motivacao.replace(/"/g,'&quot;')  : '';
+  var seg  = dados && dados.segredo    ? dados.segredo.replace(/"/g,'&quot;')    : '';
+  var desc = dados && dados.desc       ? dados.desc                               : '';
   var div = document.createElement('div');
   div.className = 'npc-card';
   div.id = id;
   div.innerHTML = '<div class="npc-card-header">'
-    + '<input type="text" placeholder="Nome do NPC..." style="font-weight:600;font-family:'Cinzel',serif;" value="'+(dados&&dados.nome?dados.nome:'')+'">'
-    + '<select onchange="atualizarTagNPC(this,''+id+'')" style="background:rgba(242,232,213,0.08);border:1px solid rgba(201,162,39,0.25);color:var(--parchment-dark);font-family:'Cinzel',serif;font-size:0.7rem;padding:0.3rem;border-radius:2px;outline:none;cursor:pointer;">'
+    + '<input type="text" placeholder="Nome do NPC..." style="font-weight:600;" value="'+nome+'">'
+    + '<select onchange="atualizarTagNPC(this,\''+id+'\')" style="background:rgba(242,232,213,0.08);border:1px solid rgba(201,162,39,0.25);color:var(--parchment-dark);font-size:0.7rem;padding:0.3rem;border-radius:2px;outline:none;cursor:pointer;">'
     + '<option value="neutro"'+(rel==='neutro'?' selected':'')+'>Neutro</option>'
     + '<option value="aliado"'+(rel==='aliado'?' selected':'')+'>Aliado</option>'
     + '<option value="inimigo"'+(rel==='inimigo'?' selected':'')+'>Inimigo</option>'
     + '</select>'
     + '<span id="tag-'+id+'" class="npc-tag '+rel+'">'+labels[rel]+'</span>'
-    + '<button class="btn-remover" onclick="removerCard(''+id+'')">x Remover</button>'
+    + '<button class="btn-remover" onclick="removerCard(\''+id+'\')">✕ Remover</button>'
     + '</div>'
     + '<div class="npc-row">'
-    + '<label>Raca<input type="text" placeholder="Ex: Halfling" value="'+(dados&&dados.raca?dados.raca:'')+'"></label>'
-    + '<label>Classe/Profissao<input type="text" placeholder="Ex: Feiticeiro" value="'+(dados&&dados.classe?dados.classe:'')+'"></label>'
-    + '<label>Localizacao<input type="text" placeholder="Ex: Mauern" value="'+(dados&&dados.local?dados.local:'')+'"></label>'
+    + '<label>Raça<input type="text" placeholder="Ex: Halfling" value="'+raca+'"></label>'
+    + '<label>Classe/Profissão<input type="text" placeholder="Ex: Feiticeiro" value="'+cls+'"></label>'
+    + '<label>Localização<input type="text" placeholder="Ex: Mauern" value="'+loc+'"></label>'
     + '</div>'
     + '<div class="npc-row">'
-    + '<label>Motivacao<input type="text" placeholder="O que quer?" value="'+(dados&&dados.motivacao?dados.motivacao:'')+'"></label>'
-    + '<label>Segredo<input type="text" placeholder="O que esconde?" value="'+(dados&&dados.segredo?dados.segredo:'')+'"></label>'
+    + '<label>Motivação<input type="text" placeholder="O que quer?" value="'+mot+'"></label>'
+    + '<label>Segredo<input type="text" placeholder="O que esconde?" value="'+seg+'"></label>'
     + '</div>'
-    + '<textarea placeholder="Descricao geral..." style="margin-top:0.5rem;">'+(dados&&dados.desc?dados.desc:'')+'</textarea>';
+    + '<textarea placeholder="Descrição geral..." style="margin-top:0.5rem;">'+desc+'</textarea>';
   document.getElementById('npcs-lista').appendChild(div);
 }
 
@@ -2703,11 +2714,11 @@ function _coletarNPCs(){
 }
 
 function salvarMundo(){
-  if(!window._firebaseReady){ alert('Firebase nao conectado.'); return; }
+  if(!window._firebaseReady){ alert('Firebase não conectado.'); return; }
   var dados = { sessoes: _coletarSessoes(), npcs: _coletarNPCs() };
   window._fbSet('mestre', dados).then(function(){
     var btn = event && event.target;
-    if(btn){ var orig=btn.textContent; btn.textContent='Salvo!'; setTimeout(function(){ btn.textContent=orig; },1500); }
+    if(btn){ var orig=btn.textContent; btn.textContent='✓ Salvo!'; setTimeout(function(){ btn.textContent=orig; },1500); }
   }).catch(function(){ alert('Erro ao salvar.'); });
 }
 
